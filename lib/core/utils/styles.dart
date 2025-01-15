@@ -31,22 +31,29 @@ class Styles {
     color: AppColors.blackColor,
   );
 
-  static TextStyle semiBold14 = TextStyle(
-    fontSize: 14,
+  static TextStyle light12 = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w300,
+    fontFamily: GoogleFonts.poppins().fontFamily,
+    color: AppColors.blackColor,
+  );
+
+  static TextStyle semiBold18 = TextStyle(
+    fontSize: 18,
     fontWeight: FontWeight.w600,
     fontFamily: GoogleFonts.poppins().fontFamily,
     color: AppColors.blackColor,
   );
 
-  static TextStyle medium14 = TextStyle(
-    fontSize: 14,
+  static TextStyle medium16 = TextStyle(
+    fontSize: 16,
     fontWeight: FontWeight.w500,
     fontFamily: GoogleFonts.poppins().fontFamily,
     color: const Color(0xff240F4F),
   );
 
-  static TextStyle bold20 = TextStyle(
-    fontSize: 20,
+  static TextStyle bold18 = TextStyle(
+    fontSize: 18,
     fontWeight: FontWeight.bold,
     fontFamily: GoogleFonts.poppins().fontFamily,
     color: AppColors.primaryColor,
