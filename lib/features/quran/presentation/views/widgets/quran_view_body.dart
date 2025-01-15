@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'quran_item.dart';
-import 'quran_text_field.dart';
-import 'quran_view_header.dart';
+import 'quran_header_and_text_fiel_section.dart';
+import 'quran_sliver_list.dart';
 
 class QuranViewBody extends StatelessWidget {
   const QuranViewBody({super.key});
@@ -10,14 +9,13 @@ class QuranViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const SafeArea(
-      child: Column(
-        children: [
-          SizedBox(height: 24),
-          QuranViewHeader(),
-          SizedBox(height: 24),
-          QuranTextField(),
-          SizedBox(height: 24),
-          QuranItem(),
+      child: CustomScrollView(
+        physics: BouncingScrollPhysics(),
+        slivers: [
+          SliverToBoxAdapter(
+            child: QuranHeaderAndTextFieldSection(),
+          ),
+          QuranSliverList(),
         ],
       ),
     );

@@ -45,6 +45,13 @@ class Styles {
     color: AppColors.blackColor,
   );
 
+  static TextStyle semiBold14 = TextStyle(
+    fontSize: 14,
+    fontWeight: FontWeight.w600,
+    fontFamily: GoogleFonts.poppins().fontFamily,
+    color: AppColors.blackColor,
+  );
+
   static TextStyle medium16 = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,

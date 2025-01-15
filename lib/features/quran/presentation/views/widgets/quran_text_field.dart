@@ -14,7 +14,7 @@ class QuranTextField extends StatelessWidget {
         height: 40,
         child: TextField(
           textAlign: TextAlign.right,
-          style: Styles.semiBold18,
+          style: Styles.semiBold14,
           textDirection: TextDirection.rtl,
           controller: TextEditingController(),
           cursorColor: AppColors.primaryColor,
