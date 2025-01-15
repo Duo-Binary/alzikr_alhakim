@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'quran_text_field.dart';
 import 'quran_view_header.dart';
 
 class QuranViewBody extends StatelessWidget {
@@ -12,8 +13,11 @@ class QuranViewBody extends StatelessWidget {
         children: [
           SizedBox(height: 24),
           QuranViewHeader(),
+          SizedBox(height: 24),
+          QuranTextField()
         ],
       ),
     );
   }
 }
+
