@@ -1,4 +1,6 @@
+import 'package:alzikr_alhakim/features/quran/presentation/manager/build_quran/build_quran_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/utils/colors.dart';
 import '../../../../../core/utils/styles.dart';
@@ -8,11 +10,15 @@ class QuranTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final buildQuran = context.read<BuildQuranBloc>();
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: SizedBox(
         height: 40,
         child: TextField(
+          onChanged: (value) {
+            buildQuran.add(WriteSuraEvent(suraName: value));
+          },
           textAlign: TextAlign.right,
           style: Styles.semiBold14,
           textDirection: TextDirection.rtl,
