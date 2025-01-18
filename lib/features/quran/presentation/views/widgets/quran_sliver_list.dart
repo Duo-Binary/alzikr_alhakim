@@ -1,9 +1,8 @@
-import 'package:alzikr_alhakim/core/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../data/models/quran_item_model.dart';
-import '../../manager/build_quran/build_quran_bloc.dart';
+import '../../manager/quran/quran_bloc.dart';
 import 'quran_item.dart';
 
 class QuranSliverList extends StatelessWidget {
@@ -11,24 +10,23 @@ class QuranSliverList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final buildQuran = context.read<BuildQuranBloc>();
-    return BlocBuilder<BuildQuranBloc, BuildQuranState>(
+    final quran = context.read<QuranBloc>();
+    return BlocBuilder<QuranBloc, QuranState>(
       builder: (context, state) {
         return SliverList.builder(
-            itemCount:
-                buildQuran.suraList.isEmpty ? 114 : buildQuran.suraList.length,
+            itemCount: quran.searchList.isEmpty ? 114 : quran.searchList.length,
             itemBuilder: (context, index) {
-              final list = buildQuran.suraList.isEmpty
-                  ? Constants.arabicName[index]
-                  : buildQuran.suraList[index];
+              final list = quran.searchList.isEmpty
+                  ? quran.quranList[index]
+                  : quran.searchList[index];
 
               return QuranItem(
                 quranItem: QuranItemModel(
-                    suraNumber: list['surah'],
-                    arName: list['name'],
-                    enName: list['englishName'],
-                    type: list['type'],
-                    verseCount: list['verses'].toString(),
+                    suraNumber: list.id.toString(),
+                    arName: list.name!,
+                    enName: list.transliteration!,
+                    type: list.type!,
+                    verseCount: list.totalVerses.toString(),
                     index: index),
               );
             });
