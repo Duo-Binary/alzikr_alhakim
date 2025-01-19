@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/utils/colors.dart';
 import 'widgets/quran_view_body.dart';
 
 class QuranView extends StatelessWidget {
@@ -8,7 +9,7 @@ class QuranView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      // backgroundColor: Color(0xffe8dfd0),
+      backgroundColor: AppColors.backgroundColor,
       body: QuranViewBody(),
     );
   }
