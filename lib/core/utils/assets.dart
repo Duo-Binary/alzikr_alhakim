@@ -2,9 +2,17 @@
 class Assets {
   Assets._();
   
-  /// Assets for images avatar
-  /// assets/images/ avatar.png
-  static const String imagesAvatar = "assets/images/ avatar.png";
+  /// Assets for imagesAvatar
+  /// assets/images/avatar.png
+  static const String imagesAvatar = "assets/images/avatar.png";
+
+  /// Assets for imagesBackgroundHeader
+  /// assets/images/background_header.png
+  static const String imagesBackgroundHeader = "assets/images/background_header.png";
+
+  /// Assets for imagesBasmallah
+  /// assets/images/basmallah.png
+  static const String imagesBasmallah = "assets/images/basmallah.png";
 
   /// Assets for imagesQuranHeader
   /// assets/images/quran_header.png

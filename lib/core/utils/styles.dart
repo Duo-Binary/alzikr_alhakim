@@ -65,4 +65,18 @@ class Styles {
     fontFamily: GoogleFonts.poppins().fontFamily,
     color: AppColors.primaryColor,
   );
+
+  static TextStyle bold20 = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.w700,
+    fontFamily: GoogleFonts.poppins().fontFamily,
+    color: AppColors.whiteColor,
+  );
+
+  static TextStyle medium15 = TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.w500,
+    fontFamily: GoogleFonts.poppins().fontFamily,
+    color: AppColors.whiteColor,
+  );
 }

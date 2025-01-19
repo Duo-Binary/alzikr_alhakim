@@ -8,6 +8,7 @@ class QuranView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
+      // backgroundColor: Color(0xffe8dfd0),
       body: QuranViewBody(),
     );
   }

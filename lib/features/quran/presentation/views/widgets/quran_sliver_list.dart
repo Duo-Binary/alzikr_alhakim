@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../data/models/quran_item_model.dart';
 import '../../manager/quran/quran_bloc.dart';
 import 'quran_item.dart';
 
@@ -21,13 +20,7 @@ class QuranSliverList extends StatelessWidget {
                   : quran.searchList[index];
 
               return QuranItem(
-                quranItem: QuranItemModel(
-                    suraNumber: list.id.toString(),
-                    arName: list.name!,
-                    enName: list.transliteration!,
-                    type: list.type!,
-                    verseCount: list.totalVerses.toString(),
-                    index: index),
+                quran: list,
               );
             });
       },
