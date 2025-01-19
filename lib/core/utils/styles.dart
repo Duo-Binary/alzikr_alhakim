@@ -79,4 +79,15 @@ class Styles {
     fontFamily: GoogleFonts.poppins().fontFamily,
     color: AppColors.whiteColor,
   );
+
+  static TextStyle quran20 = const TextStyle(
+    color: Colors.black,
+    fontSize: 20,
+    fontFamily: "me_quran",
+  );
+
+  static TextStyle ayat20 = TextStyle(
+    color: AppColors.primaryColor.withOpacity(.65),
+    fontSize: 20,
+  );
 }
