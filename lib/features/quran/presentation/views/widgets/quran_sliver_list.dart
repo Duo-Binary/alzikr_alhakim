@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../manager/quran/quran_bloc.dart';
+import '../../manager/quran/quran_cubit.dart';
 import 'quran_item.dart';
 
 class QuranSliverList extends StatelessWidget {
@@ -9,8 +9,8 @@ class QuranSliverList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final quran = context.read<QuranBloc>();
-    return BlocBuilder<QuranBloc, QuranState>(
+    final quran = context.read<QuranCubit>();
+    return BlocBuilder<QuranCubit, QuranState>(
       builder: (context, state) {
         return SliverList.builder(
             itemCount: quran.searchList.isEmpty ? 114 : quran.searchList.length,

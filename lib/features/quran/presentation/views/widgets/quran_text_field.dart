@@ -3,21 +3,21 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/utils/colors.dart';
 import '../../../../../core/utils/styles.dart';
-import '../../manager/quran/quran_bloc.dart';
+import '../../manager/quran/quran_cubit.dart';
 
 class QuranTextField extends StatelessWidget {
   const QuranTextField({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final quran = context.read<QuranBloc>();
+    final quran = context.read<QuranCubit>();
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: SizedBox(
         height: 40,
         child: TextField(
           onChanged: (value) {
-            quran.add(SearchQuranEvent(sura: value));
+            quran.searchQuran(sura: value);
           },
           textAlign: TextAlign.right,
           style: Styles.semiBold14,

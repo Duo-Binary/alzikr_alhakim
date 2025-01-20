@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../core/utils/navigation.dart';
-import '../../quran/presentation/manager/quran/quran_bloc.dart';
+import '../../quran/presentation/manager/quran/quran_cubit.dart';
 import '../../quran/presentation/views/quran_view.dart';
 
 class SplashView extends StatefulWidget {
@@ -24,9 +24,8 @@ class _SplashViewState extends State<SplashView> {
     return const Scaffold();
   }
 
-  void _navigation() async{
-    context.read<QuranBloc>().add(ReadJsonEvent());
-    await Future.delayed(const Duration(seconds: 2));
+  void _navigation() async {
+    await context.read<QuranCubit>().readJson();
     // ignore: use_build_context_synchronously
     Navigation.go(context, const QuranView());
   }
