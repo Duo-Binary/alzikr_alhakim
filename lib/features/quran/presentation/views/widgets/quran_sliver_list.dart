@@ -19,9 +19,7 @@ class QuranSliverList extends StatelessWidget {
                   ? quran.quranList[index]
                   : quran.searchList[index];
 
-              return QuranItem(
-                quran: list,
-              );
+              return QuranItem(quran: list);
             });
       },
     );

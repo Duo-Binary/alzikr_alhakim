@@ -17,19 +17,16 @@ class QuranItem extends StatelessWidget {
     return Column(
       children: [
         if (quran.id != null && quran.id == 0) const Divider(),
-        Directionality(
-          textDirection: TextDirection.rtl,
-          child: ListTile(
-            horizontalTitleGap: 20,
-            onTap: () => Navigation.push(context, SuraView(quran: quran)),
-            contentPadding: const EdgeInsets.symmetric(horizontal: 20),
-            leading: ListTileLeading(suraNumber: quran.id.toString()),
-            title: Text(quran.name!, style: Styles.semiBold18),
-            subtitle: Text(
-                "${quran.type}   • ${formatVerseNumber(int.parse(quran.totalVerses!.toString()))} ايات",
-                style: Styles.light12),
-            trailing: Text(quran.transliteration!, style: Styles.bold18),
-          ),
+        ListTile(
+          horizontalTitleGap: 20,
+          onTap: () => Navigation.push(context, SuraView(quran: quran)),
+          contentPadding: const EdgeInsets.symmetric(horizontal: 20),
+          leading: ListTileLeading(suraNumber: quran.id.toString()),
+          title: Text(quran.name!, style: Styles.semiBold18),
+          subtitle: Text(
+              "${quran.type}   • ${formatVerseNumber(int.parse(quran.totalVerses!.toString()))} ايات",
+              style: Styles.light12),
+          trailing: Text(quran.transliteration!, style: Styles.bold18),
         ),
         const Divider(thickness: 2),
       ],
