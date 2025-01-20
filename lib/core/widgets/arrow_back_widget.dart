@@ -1,10 +1,10 @@
 import 'package:alzikr_alhakim/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utils/navigation.dart';
+import '../utils/navigation.dart';
 
-class SuraArrowBackWidget extends StatelessWidget {
-  const SuraArrowBackWidget({super.key});
+class ArrowBackWidget extends StatelessWidget {
+  const ArrowBackWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
