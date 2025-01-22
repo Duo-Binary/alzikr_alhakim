@@ -16,7 +16,7 @@ class QuranItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        if (quran.id != null && quran.id == 0) const Divider(),
+        if (quran.id != null && quran.id == 1) const Divider(),
         ListTile(
           horizontalTitleGap: 20,
           onTap: () => Navigation.push(context, SuraView(quran: quran)),

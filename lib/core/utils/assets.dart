@@ -14,8 +14,16 @@ class Assets {
   /// assets/images/basmallah.png
   static const String imagesBasmallah = "assets/images/basmallah.png";
 
+  /// Assets for imagesDoaImage
+  /// assets/images/Doa_image.png
+  static const String imagesDoaImage = "assets/images/Doa_image.png";
+
   /// Assets for imagesQuranHeader
   /// assets/images/quran_header.png
   static const String imagesQuranHeader = "assets/images/quran_header.png";
+
+  /// Assets for imagesScheduleSholat
+  /// assets/images/Schedule_Sholat.png
+  static const String imagesScheduleSholat = "assets/images/Schedule_Sholat.png";
 }
 
