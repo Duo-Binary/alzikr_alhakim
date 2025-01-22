@@ -90,4 +90,19 @@ class Styles {
     color: AppColors.primaryColor.withOpacity(.65),
     fontSize: 20,
   );
+  
+  static TextStyle doaaHeader30 = const TextStyle(
+    color: AppColors.blackColor,
+    fontSize: 30,
+    fontWeight: FontWeight.w600,
+    height: 1.5
+  );
+    static TextStyle doaaContent20 = const TextStyle(
+    color: AppColors.primaryColor,
+    fontFamily: 'Poppins',
+    fontSize: 22,
+    fontWeight: FontWeight.w600,
+    wordSpacing: 4,
+    height: 1.5
+  );
 }
