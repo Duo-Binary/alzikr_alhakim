@@ -6,15 +6,18 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../../features/quran/data/repo/quran_repo_impl.dart';
 import '../../features/quran/presentation/manager/quran/quran_cubit.dart';
-import '../../features/splash/presentation/splash_view.dart';
+import '../../features/splash/presentation/views/splash_view.dart';
 
 class AlzikrAlhakim extends StatelessWidget {
   const AlzikrAlhakim({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => DoaCubit(DoaRepoImpl()),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => QuranCubit(QuranRepoImpl())),
+        BlocProvider(create: (context) => DoaCubit(DoaRepoImpl())),
+      ],
       child: MaterialApp(
         title: 'الذكر الحكيم',
         debugShowCheckedModeBanner: false,

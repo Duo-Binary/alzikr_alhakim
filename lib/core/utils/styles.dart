@@ -80,29 +80,29 @@ class Styles {
     color: AppColors.whiteColor,
   );
 
-  static TextStyle quran20 = const TextStyle(
-    color: Colors.black,
-    fontSize: 20,
-    fontFamily: "me_quran",
-  );
+  static TextStyle quran22 = const TextStyle(
+      color: Colors.black,
+      fontSize: 22,
+      fontFamily: "uthmanic_hafs",
+      fontWeight: FontWeight.w600,
+      height: 2,
+      wordSpacing: .5);
 
   static TextStyle ayat20 = TextStyle(
-    color: AppColors.primaryColor.withOpacity(.65),
+    color: AppColors.primaryColor.withValues(alpha: .65),
     fontSize: 20,
   );
-  
+
   static TextStyle doaaHeader30 = const TextStyle(
-    color: AppColors.blackColor,
-    fontSize: 30,
-    fontWeight: FontWeight.w600,
-    height: 1.5
-  );
-    static TextStyle doaaContent20 = const TextStyle(
-    color: AppColors.primaryColor,
-    fontFamily: 'Poppins',
-    fontSize: 22,
-    fontWeight: FontWeight.w600,
-    wordSpacing: 4,
-    height: 1.5
-  );
+      color: AppColors.blackColor,
+      fontSize: 30,
+      fontWeight: FontWeight.w600,
+      height: 1.5);
+  static TextStyle doaaContent20 = TextStyle(
+      color: AppColors.primaryColor,
+      fontFamily: GoogleFonts.poppins().fontFamily,
+      fontSize: 22,
+      fontWeight: FontWeight.w600,
+      wordSpacing: 4,
+      height: 1.5);
 }

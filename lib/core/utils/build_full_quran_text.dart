@@ -10,11 +10,11 @@ List<TextSpan> buildFullQuranText(List<Verses> verses) {
   for (var verse in verses) {
     textSpans.add(TextSpan(
       text: '${verse.text}  ',
-      style: Styles.quran20,
+      style: Styles.quran22
     ));
 
     textSpans.add(TextSpan(
-      text: " \u06DD${formatVerseNumber(verse.id!)} ",
+      text: "\u06DD${formatVerseNumber(verse.id!)} ",
       style: Styles.ayat20,
     ));
   }

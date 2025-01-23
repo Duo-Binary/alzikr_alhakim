@@ -10,7 +10,7 @@ class SuraDivider extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 120 / 2),
       child: Divider(
         thickness: .7,
-        color: AppColors.whiteColor.withOpacity(.7),
+        color: AppColors.whiteColor.withValues(alpha: .7),
       ),
     );
   }

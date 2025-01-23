@@ -1,7 +1,9 @@
+import 'dart:developer';
+
 import 'package:alzikr_alhakim/features/doa/data/model/doa_model.dart';
 import 'package:alzikr_alhakim/features/doa/data/repo/doa_repo.dart';
-import 'package:bloc/bloc.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
 
 part 'doa_state.dart';
 
@@ -30,7 +32,7 @@ class DoaCubit extends Cubit<DoaState> {
   void changeCount({required int count}) {
     if (count >= currentCountIndex) {
       currentCountIndex++;
-      print("here1 ${currentCountIndex}");
+      log("here1 $currentCountIndex");
       emit(ChangeCounterIndexSuccess());
     }
   }
@@ -40,8 +42,8 @@ class DoaCubit extends Cubit<DoaState> {
       currentCountIndex = 0;
 
       currentVerseIndex++;
-      print("here3 $currentCountIndex");
-      print("here4 $currentCountIndex");
+      log("here3 $currentCountIndex");
+      log("here4 $currentCountIndex");
       emit(ChangeCounterIndexSuccess());
     }
   }

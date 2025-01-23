@@ -3,7 +3,7 @@ class DoaModel {
   String? category;
   String? audio;
   String? filename;
-  List<array>? verses;
+  List<Array>? verses;
 
   DoaModel({
    this.id,
@@ -18,22 +18,22 @@ class DoaModel {
       category: json["category"],
       filename: json["filename"],
       audio: json["audio"],
-      verses: (json["array"] as List).map((e) => array.fromJson(e)).toList(),
+      verses: (json["array"] as List).map((e) => Array.fromJson(e)).toList(),
     );
   }
 }
 
-class array {
+class Array {
   int? id;
   String? text;
   int? count;
   String? audio;
   String? filename;
 
-  array({this.id, this.text,this.count,this.audio,this.filename,});
+  Array({this.id, this.text,this.count,this.audio,this.filename,});
 
-  factory array.fromJson(Map<String, dynamic> json) {
-    return array(
+  factory Array.fromJson(Map<String, dynamic> json) {
+    return Array(
       id: json["id"],
       text: json["text"],
 
