@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:quran/quran.dart';
 
 import '../../manager/quran/quran_cubit.dart';
 import 'quran_item.dart';
@@ -19,7 +20,7 @@ class QuranSliverList extends StatelessWidget {
                   ? quran.quranList[index]
                   : quran.searchList[index];
 
-              return QuranItem(quran: list);
+              return QuranItem(quran: list, index: getPageNumber(list.id!, 1));
             });
       },
     );

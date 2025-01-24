@@ -8,9 +8,10 @@ import '../../../../../core/utils/format_verse_number.dart';
 import 'list_tile_leading.dart';
 
 class QuranItem extends StatelessWidget {
-  const QuranItem({super.key, required this.quran});
+  const QuranItem({super.key, required this.quran, required this.index});
 
   final QuranModel quran;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +20,8 @@ class QuranItem extends StatelessWidget {
         if (quran.id != null && quran.id == 1) const Divider(),
         ListTile(
           horizontalTitleGap: 20,
-          onTap: () => Navigation.push(context, SuraView(quran: quran)),
+          onTap: () =>
+              Navigation.push(context, SuraView(quran: quran, index: index)),
           contentPadding: const EdgeInsets.symmetric(horizontal: 20),
           leading: ListTileLeading(suraNumber: quran.id.toString()),
           title: Text(quran.name!, style: Styles.semiBold18),

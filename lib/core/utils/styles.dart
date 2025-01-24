@@ -1,5 +1,6 @@
 import 'package:alzikr_alhakim/core/utils/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Styles {
@@ -89,15 +90,14 @@ class Styles {
       wordSpacing: .5);
 
   static TextStyle ayat20 = TextStyle(
-    color: AppColors.primaryColor.withValues(alpha: .65),
-    fontSize: 20,
-  );
+      color: AppColors.primaryColor.withValues(alpha: .65), fontSize: 20);
 
   static TextStyle doaaHeader30 = const TextStyle(
       color: AppColors.blackColor,
       fontSize: 30,
       fontWeight: FontWeight.w600,
       height: 1.5);
+
   static TextStyle doaaContent20 = TextStyle(
       color: AppColors.primaryColor,
       fontFamily: GoogleFonts.poppins().fontFamily,
@@ -105,4 +105,16 @@ class Styles {
       fontWeight: FontWeight.w600,
       wordSpacing: 4,
       height: 1.5);
+
+  static TextStyle bold14 = TextStyle(
+    fontSize: 14.sp,
+    fontFamily: "taha",
+    fontWeight: FontWeight.bold,
+    color: AppColors.primaryColor,
+  );
+
+  static TextStyle suraHeader = TextStyle(
+      fontSize: 14.sp,
+      fontFamily: GoogleFonts.arima().fontFamily,
+      color: Colors.white);
 }

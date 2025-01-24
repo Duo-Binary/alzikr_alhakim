@@ -32,10 +32,13 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_bloc: ^9.0.0
+  flutter_screenutil: ^5.9.3
   google_fonts: ^6.2.1
+  quran:
+    path: ./quran-1.2.2
 
 dev_dependencies:
-  flutter_lints: ^4.0.0
+  flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
 
@@ -65,7 +68,9 @@ flutter:
     - family: "uthmanic_hafs"
       fonts:
         - asset: assets/fonts/UthmanicHafs1Ver13.otf
-
+    - family: "taha"
+      fonts:
+        - asset: assets/fonts/taha.ttf   
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
 flutter_assets:

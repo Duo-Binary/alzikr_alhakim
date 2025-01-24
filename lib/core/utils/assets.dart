@@ -10,6 +10,10 @@ class Assets {
   /// assets/images/background_header.png
   static const String imagesBackgroundHeader = "assets/images/background_header.png";
 
+  /// Assets for imagesBasmala
+  /// assets/images/basmala.png
+  static const String imagesBasmala = "assets/images/basmala.png";
+
   /// Assets for imagesBasmallah
   /// assets/images/basmallah.png
   static const String imagesBasmallah = "assets/images/basmallah.png";
@@ -22,6 +26,10 @@ class Assets {
   /// assets/images/doaa_icon.png
   static const String imagesDoaaIcon = "assets/images/doaa_icon.png";
 
+  /// Assets for imagesNoQuran
+  /// assets/images/no_quran.jpg
+  static const String imagesNoQuran = "assets/images/no_quran.jpg";
+
   /// Assets for imagesQuranHeader
   /// assets/images/quran_header.png
   static const String imagesQuranHeader = "assets/images/quran_header.png";
@@ -33,5 +41,9 @@ class Assets {
   /// Assets for imagesScheduleSholat
   /// assets/images/Schedule_Sholat.png
   static const String imagesScheduleSholat = "assets/images/Schedule_Sholat.png";
+
+  /// Assets for imagesSuraHeader
+  /// assets/images/sura_header.png
+  static const String imagesSuraHeader = "assets/images/sura_header.png";
 }
 
