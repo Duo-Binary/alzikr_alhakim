@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'sura_juz_and_page_widget.dart';
-import 'sura_view_arro_back.dart';
+import 'sura_view_arrow_back.dart';
 
 class SuraViewHeader extends StatelessWidget {
   const SuraViewHeader({super.key, required this.index});

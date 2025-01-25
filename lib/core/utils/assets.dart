@@ -14,10 +14,6 @@ class Assets {
   /// assets/images/basmala.png
   static const String imagesBasmala = "assets/images/basmala.png";
 
-  /// Assets for imagesBasmallah
-  /// assets/images/basmallah.png
-  static const String imagesBasmallah = "assets/images/basmallah.png";
-
   /// Assets for imagesDoaImage
   /// assets/images/Doa_image.png
   static const String imagesDoaImage = "assets/images/Doa_image.png";

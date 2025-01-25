@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quran/quran.dart';
 
-import '../core/utils/format_verse_number.dart';
+import '../../../../../core/utils/format_verse_number.dart';
 
 class SuraJuzAndPageWidget extends StatelessWidget {
   const SuraJuzAndPageWidget({super.key, required this.index});

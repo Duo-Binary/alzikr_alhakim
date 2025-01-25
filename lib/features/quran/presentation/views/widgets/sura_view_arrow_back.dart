@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:quran/quran.dart';
 
-import '../core/utils/styles.dart';
-import '../core/widgets/arrow_back_widget.dart';
+import '../../../../../core/utils/styles.dart';
+import '../../../../../core/widgets/arrow_back_widget.dart';
 
 class SuraViewArrowBack extends StatelessWidget {
   const SuraViewArrowBack({super.key, required this.index});

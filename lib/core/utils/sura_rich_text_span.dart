@@ -2,8 +2,8 @@ import 'package:alzikr_alhakim/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:quran/quran.dart';
 
-import 'sura_basmallah_widget.dart';
-import 'sura_header_widget.dart';
+import '../../features/quran/presentation/views/widgets/sura_basmallah_widget.dart';
+import '../../features/quran/presentation/views/widgets/sura_header_widget.dart';
 
 List<InlineSpan> suraRichTextSpan(int index) {
   return getPageData(index).expand((e) {
