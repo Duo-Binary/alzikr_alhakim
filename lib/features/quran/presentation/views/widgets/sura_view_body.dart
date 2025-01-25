@@ -32,8 +32,6 @@ class _SuraViewBodyState extends State<SuraViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.sizeOf(context);
-
     return PageView.builder(
         controller: pageController,
         itemCount: totalPagesCount + 1,
@@ -47,9 +45,7 @@ class _SuraViewBodyState extends State<SuraViewBody> {
               children: [
                 const SizedBox(height: 10),
                 SuraViewHeader(index: index),
-                if ((index == 1 || index == 2))
-                  SizedBox(height: (size.height * .15)),
-                if ((index != 1 && index != 2)) SizedBox(height: 10),
+                SizedBox(height: 10),
                 SuraFullQuranText(index: index)
               ],
             ),

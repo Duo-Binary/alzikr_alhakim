@@ -1,5 +1,6 @@
-import 'package:alzikr_alhakim/core/utils/sura_rich_text_span.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../../core/utils/sura_rich_text_span.dart';
 
 class SuraFullQuranText extends StatelessWidget {
   const SuraFullQuranText({super.key, required this.index});
