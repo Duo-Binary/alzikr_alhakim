@@ -117,4 +117,9 @@ class Styles {
       fontSize: 14.sp,
       fontFamily: GoogleFonts.arima().fontFamily,
       color: Colors.white);
+
+  static TextStyle reqular5 =
+      TextStyle(fontSize: 5.sp, fontFamily: "uthmanic_hafs");
+  static TextStyle reqular24 =
+      TextStyle(fontFamily: "arsura", fontSize: 24.sp, color: Colors.black);
 }
