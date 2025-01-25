@@ -71,11 +71,11 @@ flutter:
 
     - family: "taha"
       fonts:
-        - asset: assets/fonts/taha.ttf   
-        
-    - family: "arsura" 
+        - asset: assets/fonts/taha.ttf
+
+    - family: "arsura"
       fonts:
-        - asset: assets/fonts/arsura.ttf  
+        - asset: assets/fonts/arsura.ttf
 
     - family: QCF_P001
       fonts:
@@ -2492,7 +2492,6 @@ flutter:
     - family: QCF_P604
       fonts:
         - asset: assets\fonts\QCF2BSMLfonts\QCF2604.TTF
- 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
 flutter_assets:

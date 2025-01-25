@@ -122,4 +122,30 @@ class Styles {
       TextStyle(fontSize: 5.sp, fontFamily: "uthmanic_hafs");
   static TextStyle reqular24 =
       TextStyle(fontFamily: "arsura", fontSize: 24.sp, color: Colors.black);
+
+  static TextStyle quranText(int index) {
+    return TextStyle(
+      fontFamily: "QCF_P${index.toString().padLeft(3, "0")}",
+      height: (index == 1 || index == 2)
+          ? 2.h
+          : index == 76
+              ? 1.83.h
+              : index == 77
+                  ? 1.58.h
+                  : 1.7.h,
+      letterSpacing: 0.w,
+      wordSpacing: 0,
+      color: Colors.black,
+      fontSize: index == 1 || index == 2
+          ? 28.sp
+          : index == 145 || index == 201
+              ? index == 532 || index == 533
+                  ? 22.5.sp
+                  : 22.4.sp
+              : index == 50 || index == 34
+                  ? 23.sp
+                  : 23.1.sp,
+      backgroundColor: Colors.transparent,
+    );
+  }
 }
