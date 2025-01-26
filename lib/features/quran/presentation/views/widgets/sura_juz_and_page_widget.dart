@@ -12,7 +12,7 @@ class SuraJuzAndPageWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 22.h,
+      height: 25.h,
       width: 155.w,
       decoration: BoxDecoration(
           color: AppColors.primaryColor.withValues(alpha: .8),

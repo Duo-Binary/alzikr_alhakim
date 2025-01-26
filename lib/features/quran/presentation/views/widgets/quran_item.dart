@@ -20,8 +20,7 @@ class QuranItem extends StatelessWidget {
         if (int.parse(quran.id) == 1) const Divider(),
         ListTile(
           horizontalTitleGap: 20,
-          onTap: () =>
-              Navigation.push(context, SuraView(quran: quran, index: index)),
+          onTap: () => Navigation.push(context, SuraView(index: index)),
           contentPadding: const EdgeInsets.symmetric(horizontal: 20),
           leading: ListTileLeading(suraNumber: quran.id.toString()),
           title: Text(quran.name, style: Styles.semiBold18),
