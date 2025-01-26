@@ -16,7 +16,7 @@ class SuraJuzAndPageWidget extends StatelessWidget {
       width: 155.w,
       decoration: BoxDecoration(
           color: AppColors.primaryColor.withValues(alpha: .8),
-          borderRadius: BorderRadius.circular(12.r),
+          borderRadius: BorderRadius.circular(25.r),
           border: Border.all(color: AppColors.whiteColor)),
       child: Center(
         child: Text(

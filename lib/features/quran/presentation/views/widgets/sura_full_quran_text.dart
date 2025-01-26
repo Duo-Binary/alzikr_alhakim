@@ -8,11 +8,12 @@ class SuraFullQuranText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.sizeOf(context);
     return RichText(
       textAlign: TextAlign.center,
       softWrap: true,
       locale: const Locale("ar"),
-      text: TextSpan(children: suraRichTextSpan(index)),
+      text: TextSpan(children: suraRichTextSpan(size, index)),
     );
   }
 }

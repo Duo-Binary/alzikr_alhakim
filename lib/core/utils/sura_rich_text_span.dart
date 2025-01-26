@@ -5,7 +5,7 @@ import 'package:quran/quran.dart';
 import '../../features/quran/presentation/views/widgets/sura_basmallah_widget.dart';
 import '../../features/quran/presentation/views/widgets/sura_header_widget.dart';
 
-List<InlineSpan> suraRichTextSpan(int index) {
+List<InlineSpan> suraRichTextSpan(Size size, int index) {
   return getPageData(index).expand((e) {
     List<InlineSpan> children = [];
     for (var i = e['start']; i <= e['end']; i++) {
@@ -21,7 +21,7 @@ List<InlineSpan> suraRichTextSpan(int index) {
           text: i == e["start"]
               ? "${getVerseQCF(e["surah"], i).replaceAll(" ", "").substring(0, 1)}\u200A${getVerseQCF(e["surah"], i).replaceAll(" ", "").substring(1)}"
               : getVerseQCF(e["surah"], i).replaceAll(' ', ''),
-          style: Styles.quranText(index)));
+          style: Styles.quranText(size, index)));
     }
     return children;
   }).toList();

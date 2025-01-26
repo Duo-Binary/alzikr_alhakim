@@ -843,6 +843,6 @@ class Constants {
   ];
   static List<int> font175h = [145, 201, 569, 575, 600];
 
-  static List<int> font23s = [50, 34, 180];
+  static List<int> font23s = [34, 50, 180];
   static List<int> font225s = [532, 533];
 }

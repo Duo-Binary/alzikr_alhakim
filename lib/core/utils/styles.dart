@@ -125,14 +125,14 @@ class Styles {
   static TextStyle reqular24 =
       TextStyle(fontFamily: "arsura", fontSize: 24.sp, color: Colors.black);
 
-  static TextStyle quranText(int index) {
+  static TextStyle quranText(Size size, int index) {
     return TextStyle(
       fontFamily: "QCF_P${index.toString().padLeft(3, "0")}",
-      height: getFontHeight(index),
+      height: getFontHeight(size, index),
       letterSpacing: 0.w,
       wordSpacing: 0,
       color: Colors.black,
-      fontSize: getFontSize(index),
+      fontSize: getFontSize(size, index),
       backgroundColor: Colors.transparent,
     );
   }
