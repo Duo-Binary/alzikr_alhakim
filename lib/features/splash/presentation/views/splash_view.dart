@@ -1,10 +1,9 @@
-import 'package:alzikr_alhakim/features/doa/presentation/manager/doa/doa_cubit.dart';
-import 'package:alzikr_alhakim/features/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/utils/navigation.dart';
-import '../../../quran/presentation/manager/quran/quran_cubit.dart';
+import '../../../doa/presentation/manager/doa/doa_cubit.dart';
+import '../../../home/presentation/views/home_view.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -26,10 +25,7 @@ class _SplashViewState extends State<SplashView> {
   }
 
   void _navigation() async {
-    final quran = context.read<QuranCubit>();
-    final doa = context.read<DoaCubit>();
-    await quran.readJson();
-    await doa.readJson();
+    await context.read<DoaCubit>().readJson();
     // ignore: use_build_context_synchronously
     Navigation.go(context, const HomeView());
   }

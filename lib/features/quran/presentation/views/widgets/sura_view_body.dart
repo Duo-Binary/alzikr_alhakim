@@ -1,24 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:quran/quran.dart';
 
-import '../../../data/models/quran_model.dart';
-import 'sura_arrow_and_header_and_quran_text_section.dart';
+import 'no_sura_widget.dart';
+import 'sura_quran_found.dart';
 
 class SuraViewBody extends StatelessWidget {
-  const SuraViewBody({super.key, required this.quran});
-  final QuranModel quran;
+  const SuraViewBody({super.key, required this.pageController});
+  final PageController pageController;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 20),
-      child: CustomScrollView(
-        physics: const BouncingScrollPhysics(),
-        slivers: [
-          SliverToBoxAdapter(
-            child: SuraArrowAndHeaderAndQuranTextSection(quran: quran),
-          )
-        ],
+    return SafeArea(
+      child: Directionality(
+        textDirection: TextDirection.rtl,
+        child: PageView.builder(
+            controller: pageController,
+            itemCount: totalPagesCount + 1,
+            itemBuilder: (context, index) {
+              if (index == 0) {
+                return NoSuraWidget();
+              }
+              return SuraQuranFound(index: index);
+            }),
       ),
     );
   }
 }
+

@@ -17,6 +17,7 @@ class _HomeViewState extends State<HomeView> {
     QuranView(),
     DoaaView(),
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

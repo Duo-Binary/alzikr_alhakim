@@ -6,5 +6,6 @@ import 'core/utils/bloc_observer.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = BlocObs();
+
   runApp(const AlzikrAlhakim());
 }

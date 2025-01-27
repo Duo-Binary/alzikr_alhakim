@@ -1,6 +1,9 @@
 import 'package:alzikr_alhakim/core/utils/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import 'get_font_height_and_size.dart';
 
 class Styles {
   static TextStyle bold30 = TextStyle(
@@ -89,15 +92,14 @@ class Styles {
       wordSpacing: .5);
 
   static TextStyle ayat20 = TextStyle(
-    color: AppColors.primaryColor.withValues(alpha: .65),
-    fontSize: 20,
-  );
+      color: AppColors.primaryColor.withValues(alpha: .65), fontSize: 20);
 
   static TextStyle doaaHeader30 = const TextStyle(
       color: AppColors.blackColor,
       fontSize: 30,
       fontWeight: FontWeight.w600,
       height: 1.5);
+
   static TextStyle doaaContent20 = TextStyle(
       color: AppColors.primaryColor,
       fontFamily: GoogleFonts.poppins().fontFamily,
@@ -105,4 +107,33 @@ class Styles {
       fontWeight: FontWeight.w600,
       wordSpacing: 4,
       height: 1.5);
+
+  static TextStyle bold14 = TextStyle(
+    fontSize: 14.sp,
+    fontFamily: "taha",
+    fontWeight: FontWeight.bold,
+    color: AppColors.primaryColor,
+  );
+
+  static TextStyle suraHeader = TextStyle(
+      fontSize: 14.sp,
+      fontFamily: GoogleFonts.arima().fontFamily,
+      color: Colors.white);
+
+  static TextStyle reqular5 =
+      TextStyle(fontSize: 5.sp, fontFamily: "uthmanic_hafs");
+  static TextStyle reqular24 =
+      TextStyle(fontFamily: "arsura", fontSize: 24.sp, color: Colors.black);
+
+  static TextStyle quranText(Size size, int index) {
+    return TextStyle(
+      fontFamily: "QCF_P${index.toString().padLeft(3, "0")}",
+      height: getFontHeight(size, index),
+      letterSpacing: 0.w,
+      wordSpacing: 0,
+      color: Colors.black,
+      fontSize: getFontSize(size, index),
+      backgroundColor: Colors.transparent,
+    );
+  }
 }
