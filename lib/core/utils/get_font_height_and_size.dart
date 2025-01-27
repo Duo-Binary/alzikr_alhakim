@@ -11,12 +11,7 @@ double getFontHeight(Size size, int index) {
           ? size.width <= 370
               ? 2.03.h
               : size.width <= 420 && size.width > 370
-                  ? index == 499 ||
-                          index == 526 ||
-                          index == 549 ||
-                          index == 556 ||
-                          index == 558 ||
-                          index == 585
+                  ? checkViewIndex(index, Constants.font175h) != null
                       ? 1.75.h
                       : 1.74.h
                   : 1.66.h
@@ -61,13 +56,9 @@ double getFontHeight(Size size, int index) {
                                       ? 1.87.h
                                       : 1.77.h
                                   : size.width <= 420 && size.width > 370
-                                      ? index == 587 ||
-                                              index == 591 ||
-                                              index == 595 ||
-                                              index == 596 ||
-                                              index == 597 ||
-                                              index == 598 ||
-                                              index == 599
+                                      ? checkViewIndex(
+                                                  index, Constants.font185h) !=
+                                              null
                                           ? 1.85.h
                                           : index >= 601
                                               ? 1.8.h
