@@ -801,7 +801,7 @@ class Constants {
   ];
 
   static List<int> font2h = [1, 2];
-  static List<int> font158h = [
+  static List<int> font166h = [
     77,
     332,
     342,
@@ -821,7 +821,7 @@ class Constants {
     568,
     585
   ];
-  static List<int> font183h = [
+  static List<int> font193h = [
     76,
     207,
     331,
@@ -841,8 +841,8 @@ class Constants {
     557,
     584
   ];
-  static List<int> font175h = [145, 201, 569, 575, 600];
+  static List<int> font183h = [145, 201, 569, 575, 600];
 
-  static List<int> font23s = [34, 50, 180];
+  static List<int> font23s = [34, 50];
   static List<int> font225s = [532, 533];
 }
