@@ -1,4 +1,5 @@
-import 'package:alzikr_alhakim/core/utils/colors.dart';
+import 'package:alzikr_alhakim/core/utils/assets.dart';
+import 'package:alzikr_alhakim/core/utils/custom_svg.dart';
 import 'package:alzikr_alhakim/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -12,18 +13,19 @@ class SaveAndGoMarkItem extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        height: 30,
+        height: 33,
         width: 150,
-        decoration:
-            BoxDecoration(border: Border.all(color: AppColors.backgroundColor)),
+        decoration: BoxDecoration(
+            color: Color(0xff575757).withValues(alpha: .8),
+            borderRadius: BorderRadius.circular(4)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Icon(Icons.bookmark, color: AppColors.primaryColor, size: 22),
-            const SizedBox(width: 4),
+            CustomSvg(image: Assets.imagesSaveFilled),
+            const SizedBox(width: 10),
             Text(
               text,
-              style: Styles.bold18.copyWith(fontFamily: "taha"),
+              style: Styles.tahaBold18,
             ),
           ],
         ),

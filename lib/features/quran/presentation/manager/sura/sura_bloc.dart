@@ -11,6 +11,10 @@ class SuraBloc extends Bloc<SuraEvent, SuraState> {
         isSuraClicked = !isSuraClicked;
         emit(ChangeSuraClick());
       }
+      if (event is SuraScrollEvent) {
+        isSuraClicked = false;
+        emit(ChangeSuraClick());
+      }
     });
   }
 }

@@ -76,6 +76,13 @@ class Styles {
     color: AppColors.whiteColor,
   );
 
+  static TextStyle tahaBold18 = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+    fontFamily: "taha",
+    color: Color(0xffF3F3F3),
+  );
+
   static TextStyle medium15 = TextStyle(
     fontSize: 15,
     fontWeight: FontWeight.w500,
