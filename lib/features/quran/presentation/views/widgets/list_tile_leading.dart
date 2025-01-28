@@ -1,4 +1,5 @@
 import 'package:alzikr_alhakim/core/utils/assets.dart';
+import 'package:alzikr_alhakim/core/utils/custom_svg.dart';
 import 'package:alzikr_alhakim/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -11,14 +12,12 @@ class ListTileLeading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 36,
-      decoration: const BoxDecoration(
-        image: DecorationImage(image: AssetImage(Assets.imagesAvatar)),
-      ),
-      child: Center(
-          child: Text(formatVerseNumber(int.parse(suraNumber)),
-              style: Styles.medium16)),
+    return Stack(
+      alignment: Alignment.center,
+      children: [
+        CustomSvg(image: Assets.imagesLeadingIcon),
+        Text(formatVerseNumber(int.parse(suraNumber)), style: Styles.medium16)
+      ],
     );
   }
 }
