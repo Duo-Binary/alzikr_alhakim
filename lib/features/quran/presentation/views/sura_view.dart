@@ -12,7 +12,7 @@ class SuraView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => SuraBloc(),
+      create: (context) => SuraBloc()..add(GetMarkEvent()),
       child: Scaffold(
         backgroundColor: AppColors.backgroundColor,
         body: SafeArea(

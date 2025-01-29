@@ -44,7 +44,7 @@ class _SuraViewBodyState extends State<SuraViewBody> {
           return SuraQuranAndSaveGoMark(
             index: index,
             onTap: () {
-              pageController.jumpToPage(10);
+              pageController.jumpToPage(index);
             },
           );
         });

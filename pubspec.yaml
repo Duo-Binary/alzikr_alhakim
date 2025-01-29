@@ -37,6 +37,7 @@ dependencies:
   google_fonts: ^6.2.1
   quran:
     path: ./quran-1.2.2
+  shared_preferences: ^2.4.0
   wakelock_plus: ^1.2.10
 
 dev_dependencies:

@@ -1,12 +1,16 @@
 import 'package:alzikr_alhakim/core/utils/colors.dart';
+import 'package:alzikr_alhakim/features/quran/presentation/manager/sura/sura_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'save_and_go_mark_item.dart';
 import 'sura_alert_dialog_widget.dart';
 
 class SuraSaveAndGoMarkWidget extends StatelessWidget {
-  const SuraSaveAndGoMarkWidget({super.key, required this.onTap});
+  const SuraSaveAndGoMarkWidget(
+      {super.key, required this.onTap, required this.index});
   final Function() onTap;
+  final int index;
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +24,13 @@ class SuraSaveAndGoMarkWidget extends StatelessWidget {
           children: [
             SaveAndGoMarkItem(
                 text: "حفظ علامة",
-                onTap: () => showDialog(
-                    context: context,
-                    builder: (context) => SuraAlertDialogWidget())),
+                onTap: () {
+                  context.read<SuraBloc>().add(SuraScrollEvent());
+                  showDialog(
+                      context: context,
+                      builder: (context) =>
+                          SuraAlertDialogWidget(index: index));
+                }),
             SaveAndGoMarkItem(text: "انتقل الي العلامة", onTap: onTap)
           ],
         ),
