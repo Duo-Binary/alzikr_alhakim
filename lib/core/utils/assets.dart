@@ -34,6 +34,10 @@ class Assets {
   /// assets/images/quran_icon.svg
   static const String imagesQuranIcon = "assets/images/quran_icon.svg";
 
+  /// Assets for imagesSaveFilled
+  /// assets/images/save_filled.svg
+  static const String imagesSaveFilled = "assets/images/save_filled.svg";
+
   /// Assets for imagesScheduleSholat
   /// assets/images/Schedule_Sholat.png
   static const String imagesScheduleSholat = "assets/images/Schedule_Sholat.png";
@@ -41,5 +45,9 @@ class Assets {
   /// Assets for imagesSuraHeader
   /// assets/images/sura_header.png
   static const String imagesSuraHeader = "assets/images/sura_header.png";
+
+  /// Assets for imagesSuraMark
+  /// assets/images/sura_mark.svg
+  static const String imagesSuraMark = "assets/images/sura_mark.svg";
 }
 
