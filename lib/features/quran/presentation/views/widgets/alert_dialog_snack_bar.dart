@@ -5,7 +5,7 @@ import 'snack_bar_content_widget.dart';
 
 SnackBar alertDialogSnackbar(BuildContext context) {
   return SnackBar(
-      backgroundColor: AppColors.blackColor.withValues(alpha: .85),
+      backgroundColor: AppColors.blackColor.withValues(alpha: .8),
       behavior: SnackBarBehavior.floating,
       padding: EdgeInsets.symmetric(vertical: 10),
       margin: EdgeInsets.only(

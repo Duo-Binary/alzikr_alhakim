@@ -1,5 +1,5 @@
 import 'package:alzikr_alhakim/core/utils/colors.dart';
-import 'package:alzikr_alhakim/features/quran/presentation/manager/sura/sura_bloc.dart';
+import 'package:alzikr_alhakim/features/quran/presentation/manager/sura/sura_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -25,7 +25,7 @@ class SuraSaveAndGoMarkWidget extends StatelessWidget {
             SaveAndGoMarkItem(
                 text: "حفظ علامة",
                 onTap: () {
-                  context.read<SuraBloc>().add(SuraScrollEvent());
+                  context.read<SuraCubit>().suraScroll();
                   showDialog(
                       context: context,
                       builder: (context) =>

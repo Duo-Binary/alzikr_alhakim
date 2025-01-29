@@ -1,6 +1,8 @@
 import 'package:alzikr_alhakim/core/utils/init_sura_view.dart';
+import 'package:alzikr_alhakim/features/quran/presentation/manager/sura/sura_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:quran/quran.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
 
@@ -34,6 +36,7 @@ class _SuraViewBodyState extends State<SuraViewBody> {
 
   @override
   Widget build(BuildContext context) {
+    final sura = context.read<SuraCubit>();
     return PageView.builder(
         controller: pageController,
         itemCount: totalPagesCount + 1,
@@ -44,7 +47,9 @@ class _SuraViewBodyState extends State<SuraViewBody> {
           return SuraQuranAndSaveGoMark(
             index: index,
             onTap: () {
-              pageController.jumpToPage(index);
+              if (sura.index != null) {
+                pageController.jumpToPage(sura.index!);
+              }
             },
           );
         });

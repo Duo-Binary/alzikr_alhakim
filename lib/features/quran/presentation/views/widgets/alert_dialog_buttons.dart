@@ -2,7 +2,7 @@ import 'package:alzikr_alhakim/core/utils/navigation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../manager/sura/sura_bloc.dart';
+import '../../manager/sura/sura_cubit.dart';
 import 'alert_dialog_text_button.dart';
 
 class AlertDialogButtons extends StatelessWidget {
@@ -22,7 +22,7 @@ class AlertDialogButtons extends StatelessWidget {
               text: "نعم",
               onPressed: () async {
                 Navigation.pop(context);
-                context.read<SuraBloc>().add(SaveMarkEvent(index: index));
+                await context.read<SuraCubit>().saveMark(index);
               })
         ],
       ),

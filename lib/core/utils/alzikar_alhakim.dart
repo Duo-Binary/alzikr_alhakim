@@ -1,3 +1,4 @@
+import 'package:alzikr_alhakim/features/quran/presentation/manager/sura/sura_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -12,8 +13,15 @@ class AlzikrAlhakim extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => DoaCubit(DoaRepoImpl()),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => DoaCubit(DoaRepoImpl()),
+        ),
+        BlocProvider(
+          create: (context) => SuraCubit(),
+        ),
+      ],
       child: ScreenUtilInit(
         designSize: const Size(392.72727272727275, 800.7272727272727),
         child: MaterialApp(

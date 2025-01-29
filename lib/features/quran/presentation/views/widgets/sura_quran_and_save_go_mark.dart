@@ -1,10 +1,7 @@
-import 'dart:developer';
-
-import 'package:alzikr_alhakim/core/service/shared_pref_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../manager/sura/sura_bloc.dart';
+import '../../manager/sura/sura_cubit.dart';
 import 'sura_book_mark_widget.dart';
 import 'sura_quran_found.dart';
 import 'sura_save_and_go_mark_widget.dart';
@@ -17,12 +14,13 @@ class SuraQuranAndSaveGoMark extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final sura = context.read<SuraBloc>();
-    return BlocBuilder<SuraBloc, SuraState>(
+    final sura = context.read<SuraCubit>();
+
+    return BlocBuilder<SuraCubit, SuraState>(
       builder: (context, state) {
         return GestureDetector(
             onTap: () {
-              sura.add(SuraClickEvent());
+              sura.suraClick();
             },
             child: Stack(
               alignment: Alignment.bottomCenter,
@@ -30,8 +28,7 @@ class SuraQuranAndSaveGoMark extends StatelessWidget {
                 SuraQuranFound(index: index),
                 if (sura.isSuraClicked)
                   SuraSaveAndGoMarkWidget(index: index, onTap: onTap),
-                if (SharedPrefService().getInt() == index)
-                  const SuraBookMarkWidget()
+                if (sura.index == index) const SuraBookMarkWidget()
               ],
             ));
       },

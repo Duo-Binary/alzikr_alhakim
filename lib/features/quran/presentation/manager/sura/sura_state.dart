@@ -1,4 +1,4 @@
-part of 'sura_bloc.dart';
+part of 'sura_cubit.dart';
 
 sealed class SuraState {}
 
@@ -8,8 +8,4 @@ final class ChangeSuraClick extends SuraState {}
 
 final class SaveMarkState extends SuraState {}
 
-final class GetMarkState extends SuraState {
-  final int index;
-
-  GetMarkState({required this.index});
-}
+final class GetMarkState extends SuraState {}

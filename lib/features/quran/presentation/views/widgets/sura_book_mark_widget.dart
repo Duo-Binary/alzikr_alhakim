@@ -13,7 +13,7 @@ class SuraBookMarkWidget extends StatelessWidget {
         top: 0.0,
         left: 20.h,
         child: CustomSvg(
-            height: 55,
+            height: 40.h,
             image: Assets.imagesSuraMark,
             color: AppColors.primaryColor.withValues(alpha: .8)));
   }
