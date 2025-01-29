@@ -5,7 +5,8 @@ import 'save_and_go_mark_item.dart';
 import 'sura_alert_dialog_widget.dart';
 
 class SuraSaveAndGoMarkWidget extends StatelessWidget {
-  const SuraSaveAndGoMarkWidget({super.key});
+  const SuraSaveAndGoMarkWidget({super.key, required this.onTap});
+  final Function() onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +22,8 @@ class SuraSaveAndGoMarkWidget extends StatelessWidget {
                 text: "حفظ علامة",
                 onTap: () => showDialog(
                     context: context,
-                    builder: (context) {
-                      return SuraAlertDialogWidget();
-                    })),
-            SaveAndGoMarkItem(text: "انتقل الي العلامة", onTap: () {})
+                    builder: (context) => SuraAlertDialogWidget())),
+            SaveAndGoMarkItem(text: "انتقل الي العلامة", onTap: onTap)
           ],
         ),
       ),

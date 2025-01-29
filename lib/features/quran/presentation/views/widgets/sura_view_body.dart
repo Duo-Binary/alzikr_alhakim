@@ -41,7 +41,12 @@ class _SuraViewBodyState extends State<SuraViewBody> {
           if (index == 0) {
             return NoSuraWidget();
           }
-          return SuraQuranAndSaveGoMark(index: index);
+          return SuraQuranAndSaveGoMark(
+            index: index,
+            onTap: () {
+              pageController.jumpToPage(10);
+            },
+          );
         });
   }
 }

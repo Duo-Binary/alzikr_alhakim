@@ -1,5 +1,7 @@
+import 'package:alzikr_alhakim/core/utils/navigation.dart';
 import 'package:flutter/material.dart';
 
+import 'alert_dialog_snack_bar.dart';
 import 'alert_dialog_text_button.dart';
 
 class AlertDialogContent extends StatelessWidget {
@@ -14,11 +16,16 @@ class AlertDialogContent extends StatelessWidget {
         IntrinsicHeight(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const AlertDialogTextButton(text: "لا"),
               const VerticalDivider(width: 0),
-              AlertDialogTextButton(text: "نعم", onPressed: () {})
+              AlertDialogTextButton(
+                  text: "نعم",
+                  onPressed: () {
+                    Navigation.pop(context);
+                    ScaffoldMessenger.of(context)
+                        .showSnackBar(alertDialogSnackbar(context));
+                  })
             ],
           ),
         )
