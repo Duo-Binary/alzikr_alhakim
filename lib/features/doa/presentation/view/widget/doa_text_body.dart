@@ -1,7 +1,7 @@
 import 'package:alzikr_alhakim/core/utils/colors.dart';
 import 'package:alzikr_alhakim/core/utils/styles.dart';
 import 'package:alzikr_alhakim/features/doa/data/model/doa_model.dart';
-import 'package:alzikr_alhakim/features/doa/presentation/manager/doa/doa_cubit.dart';
+import 'package:alzikr_alhakim/features/doa/presentation/manager/doa/doa_bloc.dart';
 import 'package:flutter/material.dart';
 
 class DoaTextBody extends StatelessWidget {
@@ -12,7 +12,7 @@ class DoaTextBody extends StatelessWidget {
   });
 
   final DoaModel doa;
-  final DoaCubit doaaCubit;
+  final DoaBloc doaaCubit;
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +35,8 @@ class DoaTextBody extends StatelessWidget {
           ),
         ),
       ),
+    
+    
     );
   }
 }

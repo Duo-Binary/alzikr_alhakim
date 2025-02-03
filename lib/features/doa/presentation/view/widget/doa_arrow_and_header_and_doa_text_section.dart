@@ -1,7 +1,8 @@
 import 'package:alzikr_alhakim/core/utils/styles.dart';
 import 'package:alzikr_alhakim/core/widgets/arrow_back_widget.dart';
 import 'package:alzikr_alhakim/features/doa/data/model/doa_model.dart';
-import 'package:alzikr_alhakim/features/doa/presentation/manager/doa/doa_cubit.dart';
+import 'package:alzikr_alhakim/features/doa/presentation/manager/doa/doa_bloc.dart';
+import 'package:alzikr_alhakim/features/doa/presentation/manager/doa/doa_state.dart';
 import 'package:alzikr_alhakim/features/doa/presentation/view/widget/doa_counter_and_page_number_body.dart';
 import 'package:alzikr_alhakim/features/doa/presentation/view/widget/doa_text_body.dart';
 import 'package:flutter/material.dart';
@@ -12,9 +13,9 @@ class DoaArrowAndHeaderAndDoaTextSection extends StatelessWidget {
   final DoaModel doa;
   @override
   Widget build(BuildContext context) {
-    var doaaCubit = context.read<DoaCubit>();
+    var doaaCubit = context.read<DoaBloc>();
 
-    return BlocBuilder<DoaCubit, DoaState>(
+    return BlocBuilder<DoaBloc, DoaState>(
       builder: (context, state) {
         return ConstrainedBox(
           constraints: BoxConstraints(

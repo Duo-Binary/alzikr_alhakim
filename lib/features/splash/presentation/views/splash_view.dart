@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
 import '../../../../core/utils/navigation.dart';
-import '../../../doa/presentation/manager/doa/doa_cubit.dart';
 import '../../../home/presentation/views/home_view.dart';
 
 class SplashView extends StatefulWidget {
@@ -13,20 +10,20 @@ class SplashView extends StatefulWidget {
 }
 
 class _SplashViewState extends State<SplashView> {
-  @override
-  void initState() {
-    _navigation();
-    super.initState();
-  }
+@override
+void initState() {
+  super.initState();
+  Future.delayed(Duration(seconds: 2), () { 
+    if (mounted) {  
+      Navigation.go(context, const HomeView());
+    }
+  });
+}
 
   @override
   Widget build(BuildContext context) {
     return const Scaffold();
   }
 
-  void _navigation() async {
-    await context.read<DoaCubit>().readJson();
-    // ignore: use_build_context_synchronously
-    Navigation.go(context, const HomeView());
-  }
+ 
 }
