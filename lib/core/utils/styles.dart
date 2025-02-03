@@ -108,7 +108,7 @@ class Styles {
       height: 1.5);
 
   static TextStyle doaaContent20 = TextStyle(
-      color: AppColors.primaryColor,
+      color: AppColors.blackColor,
       fontFamily: GoogleFonts.poppins().fontFamily,
       fontSize: 22,
       fontWeight: FontWeight.w600,

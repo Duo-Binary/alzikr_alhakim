@@ -1,7 +1,8 @@
 import 'package:alzikr_alhakim/core/utils/colors.dart';
+import 'package:alzikr_alhakim/core/utils/format_verse_number.dart';
 import 'package:alzikr_alhakim/core/utils/styles.dart';
 import 'package:alzikr_alhakim/features/doa/data/model/doa_model.dart';
-import 'package:alzikr_alhakim/features/doa/presentation/manager/doa/doa_cubit.dart';
+import 'package:alzikr_alhakim/features/doa/presentation/manager/doa/doa_bloc.dart';
 import 'package:flutter/material.dart';
 
 class DoaCounterAndPageNumberBody extends StatelessWidget {
@@ -11,7 +12,7 @@ class DoaCounterAndPageNumberBody extends StatelessWidget {
     required this.doa,
   });
 
-  final DoaCubit doaaCubit;
+  final DoaBloc doaaCubit;
   final DoaModel doa;
 
   @override
@@ -32,20 +33,22 @@ class DoaCounterAndPageNumberBody extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      if (doaaCubit.currentVerseIndex !=
-                          doa.verses!.length - 1) {
-                        doaaCubit.swapToNextVerseForward(
+
+                       if (doaaCubit.currentVerseIndex != 0) {
+                        doaaCubit.swapToNextVerseBackward(
                             length: doa.verses!.length);
                       }
+                    
                     },
                     child: Row(
                       spacing: 6,
                       children: [
-                        Text(
-                          "${doa.verses!.length}",
+                          Text(
+                        formatVerseNumber(int.parse((doaaCubit.currentVerseIndex + 1).toString())),
                           style: Styles.doaaContent20
-                              .copyWith(fontSize: 16),
+                              .copyWith(fontSize: 16,color:AppColors.primaryColor),
                         ),
+                      
                       const  Icon(
                           Icons.arrow_back_ios,
                           color: AppColors.primaryColor,
@@ -56,8 +59,9 @@ class DoaCounterAndPageNumberBody extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      if (doaaCubit.currentVerseIndex != 0) {
-                        doaaCubit.swapToNextVerseBackward(
+                       if (doaaCubit.currentVerseIndex !=
+                          doa.verses!.length - 1) {
+                        doaaCubit.swapToNextVerseForward(
                             length: doa.verses!.length);
                       }
                     },
@@ -69,10 +73,12 @@ class DoaCounterAndPageNumberBody extends StatelessWidget {
                           color: AppColors.primaryColor,
                           size: 20,
                         ),
-                        Text(
-                          "${doaaCubit.currentVerseIndex + 1}",
+                         Text(
+                          formatVerseNumber(int.parse(doa.verses!.length.toString())),
                           style: Styles.doaaContent20
-                              .copyWith(fontSize: 16),
+                              .copyWith(fontSize: 16,
+                              color: AppColors.primaryColor,
+                              ),
                         ),
                       ],
                     ),
@@ -111,7 +117,7 @@ class DoaCounterAndPageNumberBody extends StatelessWidget {
                 backgroundColor: AppColors.primaryColor,
                 radius: 28,
                 child: Text(
-                  "${(doa.verses![doaaCubit.currentVerseIndex].count! - doaaCubit.currentCountIndex)}",
+              formatVerseNumber(int.parse(((doa.verses![doaaCubit.currentVerseIndex].count! - doaaCubit.currentCountIndex)).toString()))   ,
                   style: Styles.bold20.copyWith(
                       color:const Color.fromARGB(255, 245, 233, 221)),
                 ),

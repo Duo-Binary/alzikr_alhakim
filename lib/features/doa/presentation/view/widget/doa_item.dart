@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 
 
 class DoaItem extends StatelessWidget {
-  const DoaItem({super.key, required this.doa});
+  const DoaItem({super.key, required this.doa,});
 
  
   final DoaModel doa;
