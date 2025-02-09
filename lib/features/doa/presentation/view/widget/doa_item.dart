@@ -5,11 +5,12 @@ import 'package:alzikr_alhakim/features/doa/presentation/view/doa_content_view.d
 import 'package:alzikr_alhakim/features/quran/presentation/views/widgets/list_tile_leading.dart';
 import 'package:flutter/material.dart';
 
-
 class DoaItem extends StatelessWidget {
-  const DoaItem({super.key, required this.doa,});
+  const DoaItem({
+    super.key,
+    required this.doa,
+  });
 
- 
   final DoaModel doa;
 
   @override
@@ -23,11 +24,9 @@ class DoaItem extends StatelessWidget {
           contentPadding: const EdgeInsets.symmetric(horizontal: 20),
           leading: ListTileLeading(suraNumber: doa.id.toString()),
           title: Text(doa.category!, style: Styles.semiBold18),
-          
         ),
         const Divider(thickness: 2),
       ],
     );
   }
-  
 }

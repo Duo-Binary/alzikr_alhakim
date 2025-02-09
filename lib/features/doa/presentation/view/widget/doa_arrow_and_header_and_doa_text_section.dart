@@ -46,5 +46,3 @@ class DoaArrowAndHeaderAndDoaTextSection extends StatelessWidget {
     );
   }
 }
-
-
