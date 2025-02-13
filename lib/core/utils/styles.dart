@@ -102,19 +102,36 @@ class Styles {
       color: AppColors.primaryColor.withValues(alpha: .65), fontSize: 20);
 
   static TextStyle doaaHeader30 = const TextStyle(
-      color: AppColors.blackColor,
-      fontSize: 30,
-      fontWeight: FontWeight.w600,
-      height: 1.5);
+    color: AppColors.blackColor,
+    fontSize: 30,
+    fontWeight: FontWeight.w600,
+    height: 1.5,
+  );
 
+  // static TextStyle doaaContent20 = TextStyle(
+  //   color: AppColors.blackColor,
+  //   fontFamily: GoogleFonts.poppins().fontFamily,
+  //   fontSize: 22,
+  //   fontWeight: FontWeight.w600,
+  //   wordSpacing: 4,
+  //   height: 1.5,
+  // );
   static TextStyle doaaContent20 = TextStyle(
-      color: AppColors.blackColor,
+    color: AppColors.blackColor,
+    fontWeight: FontWeight.w600,
+    wordSpacing: 4,
+    fontFamily: "uthmanic_hafs",
+    height: 1.8,
+    fontSize:26
+  );
+  static TextStyle counterTextStyle20 = TextStyle(
+    fontWeight: FontWeight.w600,
+    wordSpacing: 4,
       fontFamily: GoogleFonts.poppins().fontFamily,
-      fontSize: 22,
-      fontWeight: FontWeight.w600,
-      wordSpacing: 4,
-      height: 1.5);
-
+    height: 1.8,
+      fontSize: 16,
+  color: AppColors.primaryColor,
+  );
   static TextStyle bold14 = TextStyle(
     fontSize: 14.sp,
     fontFamily: "taha",

@@ -5,8 +5,6 @@ import 'package:alzikr_alhakim/features/doa/data/model/doa_model.dart';
 import 'package:alzikr_alhakim/features/doa/presentation/manager/doa/doa_bloc.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../core/utils/show_success_pop_up.dart';
-
 class CounterBtn extends StatelessWidget {
   const CounterBtn({
     super.key,

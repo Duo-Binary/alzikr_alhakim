@@ -18,25 +18,23 @@ class DoaTextBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
-          color: const Color.fromARGB(255, 245, 233, 221),
+          color: AppColors.backgroundColor,
           borderRadius: BorderRadius.circular(20),
-          border: Border.all(color: AppColors.primaryColor, width: 2),
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(
-              horizontal: 10, vertical: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 20),
           child: SingleChildScrollView(
             child: Text(
               "${doa.verses![doaaCubit.currentVerseIndex].text}",
+              textAlign: TextAlign.justify,
               style: Styles.doaaContent20,
             ),
           ),
         ),
       ),
-    
-    
     );
   }
 }

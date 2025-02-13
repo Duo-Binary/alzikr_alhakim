@@ -27,10 +27,7 @@ class CounterBtnSwapBackward extends StatelessWidget {
           ),
           Text(
             formatVerseNumber(int.parse(doa.verses!.length.toString())),
-            style: Styles.doaaContent20.copyWith(
-              fontSize: 16,
-              color: AppColors.primaryColor,
-            ),
+            style: Styles.counterTextStyle20,
           ),
         ],
       ),
