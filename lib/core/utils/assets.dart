@@ -2,17 +2,17 @@
 class Assets {
   Assets._();
   
-  /// Assets for imagesBackgroundHeader
-  /// assets/images/background_header.png
-  static const String imagesBackgroundHeader = "assets/images/background_header.png";
+  /// Assets for imagesBackground
+  /// assets/images/background.png
+  static const String imagesBackground = "assets/images/background.png";
 
   /// Assets for imagesBasmala
   /// assets/images/basmala.png
   static const String imagesBasmala = "assets/images/basmala.png";
 
-  /// Assets for imagesDoaImage
-  /// assets/images/Doa_image.png
-  static const String imagesDoaImage = "assets/images/Doa_image.png";
+  /// Assets for imagesDoaaHeader
+  /// assets/images/doaa_header.png
+  static const String imagesDoaaHeader = "assets/images/doaa_header.png";
 
   /// Assets for imagesDoaaIcon
   /// assets/images/doaa_icon.svg
@@ -37,10 +37,6 @@ class Assets {
   /// Assets for imagesSaveFilled
   /// assets/images/save_filled.svg
   static const String imagesSaveFilled = "assets/images/save_filled.svg";
-
-  /// Assets for imagesScheduleSholat
-  /// assets/images/Schedule_Sholat.png
-  static const String imagesScheduleSholat = "assets/images/Schedule_Sholat.png";
 
   /// Assets for imagesSuraHeader
   /// assets/images/sura_header.png

@@ -1,4 +1,5 @@
 import 'package:alzikr_alhakim/core/utils/colors.dart';
+import 'package:alzikr_alhakim/core/widgets/custom_backgrond_container.dart';
 import 'package:alzikr_alhakim/features/doa/presentation/manager/doa/doa_bloc.dart';
 import 'package:alzikr_alhakim/features/doa/presentation/view/widget/doa_view_body.dart';
 import 'package:flutter/material.dart';
@@ -12,11 +13,8 @@ class DoaaView extends StatelessWidget {
     return BlocProvider(
       create: (context) => DoaBloc(),
       child: const Scaffold(
-          backgroundColor: AppColors.backgroundColor,
-          body: SafeArea(
-            child: Directionality(
-                textDirection: TextDirection.rtl, child: DoaViewBody()),
-          )),
+          backgroundColor: AppColors.blackColor,
+          body: CustomBackgroundContainer(child: DoaViewBody())),
     );
   }
 }

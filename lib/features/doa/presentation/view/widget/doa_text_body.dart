@@ -1,4 +1,3 @@
-import 'package:alzikr_alhakim/core/utils/colors.dart';
 import 'package:alzikr_alhakim/core/utils/styles.dart';
 import 'package:alzikr_alhakim/features/doa/data/model/doa_model.dart';
 import 'package:alzikr_alhakim/features/doa/presentation/manager/doa/doa_bloc.dart';
@@ -20,12 +19,8 @@ class DoaTextBody extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 10),
         width: MediaQuery.of(context).size.width,
-        decoration: BoxDecoration(
-          color: AppColors.backgroundColor,
-          borderRadius: BorderRadius.circular(20),
-        ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 20),
+          padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 10),
           child: SingleChildScrollView(
             child: Text(
               "${doa.verses![doaaCubit.currentVerseIndex].text}",

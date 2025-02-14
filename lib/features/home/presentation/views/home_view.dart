@@ -22,13 +22,16 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: views[activeIndex],
-      bottomNavigationBar: BottomNavBarWidget(
-        activeIndex: activeIndex,
-        onTap: (index) {
-          setState(() {
-            activeIndex = index;
-          });
-        },
+      bottomNavigationBar: Directionality(
+        textDirection: TextDirection.rtl,
+        child: BottomNavBarWidget(
+          activeIndex: activeIndex,
+          onTap: (index) {
+            setState(() {
+              activeIndex = index;
+            });
+          },
+        ),
       ),
     );
   }

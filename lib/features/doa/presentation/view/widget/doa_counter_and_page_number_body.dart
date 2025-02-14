@@ -3,6 +3,7 @@ import 'package:alzikr_alhakim/features/doa/presentation/manager/doa/doa_bloc.da
 import 'package:alzikr_alhakim/features/doa/presentation/view/widget/counter_arrow_and_text.dart';
 import 'package:alzikr_alhakim/features/doa/presentation/view/widget/counter_btn.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DoaCounterAndPageNumberBody extends StatelessWidget {
   const DoaCounterAndPageNumberBody({
@@ -17,7 +18,7 @@ class DoaCounterAndPageNumberBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
+      padding:  EdgeInsets.symmetric(horizontal: 64.w),
       child: Stack(
         children: [
           CounterArrowAndText(doaaCubit: doaaCubit, doa: doa),

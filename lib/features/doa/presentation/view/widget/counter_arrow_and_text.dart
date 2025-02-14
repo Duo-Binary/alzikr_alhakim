@@ -1,3 +1,4 @@
+import 'package:alzikr_alhakim/core/utils/colors.dart';
 import 'package:alzikr_alhakim/features/doa/data/model/doa_model.dart';
 import 'package:alzikr_alhakim/features/doa/presentation/manager/doa/doa_bloc.dart';
 import 'package:alzikr_alhakim/features/doa/presentation/view/widget/couner_btn_swap_backward.dart';
@@ -19,10 +20,10 @@ class CounterArrowAndText extends StatelessWidget {
         height: 36,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
-          color: const Color.fromARGB(255, 200, 186, 175),
+          color: AppColors.backgroundColor,
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 40),
+          padding: const EdgeInsets.symmetric(horizontal: 24),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -35,5 +36,3 @@ class CounterArrowAndText extends StatelessWidget {
     );
   }
 }
-
-

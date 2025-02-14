@@ -1,4 +1,4 @@
-import 'package:alzikr_alhakim/core/utils/colors.dart';
+import 'package:alzikr_alhakim/core/widgets/custom_backgrond_container.dart';
 import 'package:flutter/material.dart';
 
 import 'widgets/sura_view_body.dart';
@@ -10,11 +10,8 @@ class SuraView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backgroundColor,
-      body: SafeArea(
-          child: Directionality(
-              textDirection: TextDirection.rtl,
-              child: SuraViewBody(index: index))),
+      backgroundColor: Colors.black,
+      body: CustomBackgroundContainer(child: SuraViewBody(index: index)),
     );
   }
 }

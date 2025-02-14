@@ -31,7 +31,7 @@ class Styles {
     fontSize: 12,
     fontWeight: FontWeight.w200,
     fontFamily: GoogleFonts.poppins().fontFamily,
-    color: AppColors.blackColor,
+    color: AppColors.whiteColor,
   );
 
   static TextStyle light12 = TextStyle(
@@ -52,7 +52,7 @@ class Styles {
     fontSize: 14,
     fontWeight: FontWeight.w600,
     fontFamily: GoogleFonts.poppins().fontFamily,
-    color: AppColors.blackColor,
+    color: AppColors.whiteColor,
   );
 
   static TextStyle medium16 = TextStyle(
@@ -117,20 +117,19 @@ class Styles {
   //   height: 1.5,
   // );
   static TextStyle doaaContent20 = TextStyle(
-    color: AppColors.blackColor,
-    fontWeight: FontWeight.w600,
-    wordSpacing: 4,
-    fontFamily: "uthmanic_hafs",
-    height: 1.8,
-    fontSize:26
-  );
+      color: AppColors.blackColor,
+      fontWeight: FontWeight.w600,
+      wordSpacing: 4,
+      fontFamily: "uthmanic_hafs",
+      height: 1.8,
+      fontSize: 26);
   static TextStyle counterTextStyle20 = TextStyle(
     fontWeight: FontWeight.w600,
     wordSpacing: 4,
-      fontFamily: GoogleFonts.poppins().fontFamily,
+    fontFamily: GoogleFonts.poppins().fontFamily,
     height: 1.8,
-      fontSize: 16,
-  color: AppColors.primaryColor,
+    fontSize: 16,
+    color: AppColors.primaryColor,
   );
   static TextStyle bold14 = TextStyle(
     fontSize: 14.sp,

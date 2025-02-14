@@ -19,20 +19,22 @@ class CustomTextField extends StatelessWidget {
           textAlign: TextAlign.right,
           style: Styles.semiBold14,
           textDirection: TextDirection.rtl,
-          controller: TextEditingController(),
-          cursorColor: AppColors.primaryColor,
+          cursorColor: AppColors.whiteColor,
           decoration: InputDecoration(
+            filled: true,
+            fillColor: AppColors.primaryColor,
             border: customBorder(),
             enabledBorder: customBorder(),
             focusedBorder: customBorder(),
             hintText: textFieldModeld.hintText,
-            hintStyle: Styles.extraLight12,
+            hintStyle:
+                Styles.extraLight12,
             contentPadding:
                 const EdgeInsets.symmetric(vertical: 4, horizontal: 32),
             prefixIcon: Transform.rotate(
               angle: 3.14 * 90 / 180,
               child: const Icon(Icons.search,
-                  size: 18, color: AppColors.blackColor),
+                  size: 18, color: AppColors.whiteColor),
             ),
           ),
         ),
