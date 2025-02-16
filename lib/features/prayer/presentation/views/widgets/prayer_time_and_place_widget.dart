@@ -1,6 +1,7 @@
 import 'package:alzikr_alhakim/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../../core/utils/format_milad_and_hijri_date_time.dart';
 import '../../../data/models/prayer_column_model.dart';
 import 'prayer_column_item.dart';
 
@@ -15,8 +16,8 @@ class PrayerTimeAndPlaceWidget extends StatelessWidget {
         PrayerColumnItem(
             prayerColumnModel: PrayerColumnModel(
                 size: 4,
-                text1: "12 الثلاثاء ديسمبر 2024",
-                text2: "الأحد ربيع الأول 1445")),
+                text1: formatMiladDateTime(),
+                text2: formatHijriDateTime())),
         PrayerColumnItem(
             prayerColumnModel: PrayerColumnModel(
                 size: 4,

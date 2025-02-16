@@ -1,5 +1,6 @@
-import 'package:alzikr_alhakim/features/prayer/presentation/views/widgets/prayer_view_body.dart';
 import 'package:flutter/material.dart';
+
+import 'widgets/prayer_view_body.dart';
 
 class PrayerView extends StatelessWidget {
   const PrayerView({super.key});
@@ -10,7 +11,9 @@ class PrayerView extends StatelessWidget {
       // backgroundColor: AppColors.backgroundColor,
       body: SafeArea(
           child: Directionality(
-              textDirection: TextDirection.rtl, child: PrayerViewBody())),
+        textDirection: TextDirection.rtl,
+        child: PrayerViewBody(),
+      )),
     );
   }
 }

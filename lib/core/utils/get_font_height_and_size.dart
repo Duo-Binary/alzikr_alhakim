@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'check_view_index.dart';
-import 'constants.dart';
+import '../constants/quran_data.dart';
 
 double getFontHeight(Size size, int index) {
-  return checkViewIndex(index, Constants.font2h) != null
+  return checkViewIndex(index, QuranData.font2h) != null
       ? 2.h
-      : checkViewIndex(index, Constants.font166h) != null
+      : checkViewIndex(index, QuranData.font166h) != null
           ? size.width <= 370
               ? 2.03.h
               : size.width <= 420 && size.width > 370
-                  ? checkViewIndex(index, Constants.font175h) != null
+                  ? checkViewIndex(index, QuranData.font175h) != null
                       ? 1.75.h
                       : 1.74.h
                   : 1.66.h
-          : checkViewIndex(index, Constants.font183h) != null
+          : checkViewIndex(index, QuranData.font183h) != null
               ? size.width <= 370
                   ? index == 201 || index == 569
                       ? 2.25.h
@@ -25,7 +25,7 @@ double getFontHeight(Size size, int index) {
                           ? 1.9.h
                           : 1.93.h
                       : 1.83.h
-              : checkViewIndex(index, Constants.font193h) != null
+              : checkViewIndex(index, QuranData.font193h) != null
                   ? size.width <= 370
                       ? 2.35.h
                       : size.width <= 420 && size.width > 370
@@ -57,7 +57,7 @@ double getFontHeight(Size size, int index) {
                                       : 1.77.h
                                   : size.width <= 420 && size.width > 370
                                       ? checkViewIndex(
-                                                  index, Constants.font185h) !=
+                                                  index, QuranData.font185h) !=
                                               null
                                           ? 1.85.h
                                           : index >= 601
@@ -67,15 +67,15 @@ double getFontHeight(Size size, int index) {
 }
 
 double getFontSize(Size size, int index) {
-  return checkViewIndex(index, Constants.font2h) != null
+  return checkViewIndex(index, QuranData.font2h) != null
       ? 28.sp
       : index == 34 && size.width <= 370
           ? 22.5.sp
-          : checkViewIndex(index, Constants.font183h) != null
-              ? checkViewIndex(index, Constants.font225s) != null
+          : checkViewIndex(index, QuranData.font183h) != null
+              ? checkViewIndex(index, QuranData.font225s) != null
                   ? 22.5.sp
                   : 22.75.sp
-              : checkViewIndex(index, Constants.font23s) != null
+              : checkViewIndex(index, QuranData.font23s) != null
                   ? 23.sp
                   : (index == 590 || index == 595) && size.width <= 370
                       ? 23.sp

@@ -1,5 +1,5 @@
 import 'package:alzikr_alhakim/features/doa/data/model/doa_model.dart';
-import 'package:alzikr_alhakim/features/doa/doa_data.dart';
+import 'package:alzikr_alhakim/core/constants/doa_data.dart';
 import 'package:alzikr_alhakim/features/doa/presentation/manager/doa/doa_bloc.dart';
 import 'package:alzikr_alhakim/features/doa/presentation/manager/doa/doa_state.dart';
 import 'package:alzikr_alhakim/features/doa/presentation/view/widget/doa_item.dart';

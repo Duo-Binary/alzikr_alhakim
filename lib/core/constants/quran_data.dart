@@ -1,4 +1,4 @@
-class Constants {
+class QuranData {
   static List<Map<String, dynamic>> arabicName = [
     {
       "id": "1",
