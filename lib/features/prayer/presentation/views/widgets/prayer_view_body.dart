@@ -1,7 +1,7 @@
-import 'package:alzikr_alhakim/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
 import 'prayer_clock_and_remaning_section.dart';
+import 'prayer_list_view.dart';
 import 'prayer_time_and_place_widget.dart';
 import 'prayer_view_header.dart';
 
@@ -19,14 +19,7 @@ class PrayerViewBody extends StatelessWidget {
         const SizedBox(height: 20),
         PrayerClockAndRemaningSection(),
         Spacer(),
-        Container(
-          height: 295,
-          width: double.infinity,
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                  fit: BoxFit.cover,
-                  image: AssetImage(Assets.imagesPrayerBackground))),
-        ),
+        PrayerListView(),
       ],
     );
   }

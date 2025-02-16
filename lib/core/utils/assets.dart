@@ -2,6 +2,10 @@
 class Assets {
   Assets._();
   
+  /// Assets for imagesActiveDzhur
+  /// assets/images/active_dzhur.svg
+  static const String imagesActiveDzhur = "assets/images/active_dzhur.svg";
+
   /// Assets for imagesBackground
   /// assets/images/background.png
   static const String imagesBackground = "assets/images/background.png";
@@ -50,6 +54,10 @@ class Assets {
   /// assets/images/save_filled.svg
   static const String imagesSaveFilled = "assets/images/save_filled.svg";
 
+  /// Assets for imagesSilent
+  /// assets/images/silent.svg
+  static const String imagesSilent = "assets/images/silent.svg";
+
   /// Assets for imagesSuraHeader
   /// assets/images/sura_header.png
   static const String imagesSuraHeader = "assets/images/sura_header.png";
@@ -61,5 +69,29 @@ class Assets {
   /// Assets for imagesTimerIcon
   /// assets/images/timer_icon.svg
   static const String imagesTimerIcon = "assets/images/timer_icon.svg";
+
+  /// Assets for imagesUnactiveAser
+  /// assets/images/unactive_aser.svg
+  static const String imagesUnactiveAser = "assets/images/unactive_aser.svg";
+
+  /// Assets for imagesUnactiveDzuhur
+  /// assets/images/unactive_dzuhur.svg
+  static const String imagesUnactiveDzuhur = "assets/images/unactive_dzuhur.svg";
+
+  /// Assets for imagesUnactiveFajr
+  /// assets/images/unactive_fajr.svg
+  static const String imagesUnactiveFajr = "assets/images/unactive_fajr.svg";
+
+  /// Assets for imagesUnactiveMagrab
+  /// assets/images/unactive_magrab.svg
+  static const String imagesUnactiveMagrab = "assets/images/unactive_magrab.svg";
+
+  /// Assets for imagesUnactiveShrok
+  /// assets/images/unactive_shrok.svg
+  static const String imagesUnactiveShrok = "assets/images/unactive_shrok.svg";
+
+  /// Assets for imagesVoice
+  /// assets/images/voice.svg
+  static const String imagesVoice = "assets/images/voice.svg";
 }
 

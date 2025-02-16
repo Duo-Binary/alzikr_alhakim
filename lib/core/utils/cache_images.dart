@@ -28,7 +28,6 @@ class CacheImages {
 
   static Future<void> loadImages(BuildContext context) async {
     await _loadPngImages(context);
-    await _loadSvgImages();
     log("loaded images successfully....");
   }
 
@@ -38,10 +37,10 @@ class CacheImages {
     }
   }
 
-  static Future<void> _loadSvgImages() async {
+  static Future<void> loadSvgImages() async {
     for (var image in _svgImages) {
       var loader = SvgAssetLoader(image);
-      svg.cache
+      await svg.cache
           .putIfAbsent(loader.cacheKey(null), () => loader.loadBytes(null));
     }
   }

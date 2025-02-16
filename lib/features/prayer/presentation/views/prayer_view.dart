@@ -1,4 +1,3 @@
-import 'package:alzikr_alhakim/core/utils/colors.dart';
 import 'package:alzikr_alhakim/features/prayer/presentation/views/widgets/prayer_view_body.dart';
 import 'package:flutter/material.dart';
 

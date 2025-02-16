@@ -14,7 +14,8 @@ class CustomBackgroundContainer extends StatelessWidget {
           decoration: BoxDecoration(
               image: DecorationImage(
                   fit: BoxFit.cover,
-                  image: AssetImage(Assets.imagesBackground))),
+                  image: AssetImage(Assets.imagesBackground))
+                  ),
           child: child,
         ),
       ),

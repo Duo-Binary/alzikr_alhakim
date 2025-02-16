@@ -69,6 +69,13 @@ class Styles {
     color: AppColors.whiteColor,
   );
 
+  static TextStyle semiBold16 = TextStyle(
+    fontSize: 16,
+    fontWeight: FontWeight.w600,
+    fontFamily: GoogleFonts.poppins().fontFamily,
+    color: AppColors.whiteColor,
+  );
+
   static TextStyle medium16 = TextStyle(
     fontSize: 16,
     fontWeight: FontWeight.w500,
@@ -99,6 +106,13 @@ class Styles {
 
   static TextStyle light20 = TextStyle(
     fontSize: 20,
+    fontWeight: FontWeight.w300,
+    fontFamily: GoogleFonts.poppins().fontFamily,
+    color: Color(0xff1E1E1E).withValues(alpha: .5),
+  );
+
+  static TextStyle light16 = TextStyle(
+    fontSize: 16,
     fontWeight: FontWeight.w300,
     fontFamily: GoogleFonts.poppins().fontFamily,
     color: Color(0xff1E1E1E).withValues(alpha: .5),
