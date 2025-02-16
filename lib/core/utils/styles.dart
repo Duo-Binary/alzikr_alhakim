@@ -27,6 +27,20 @@ class Styles {
     color: AppColors.whiteColor,
   );
 
+  static TextStyle regular12 = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.normal,
+    fontFamily: GoogleFonts.poppins().fontFamily,
+    color: const Color(0xffA1A1A1),
+  );
+
+  static TextStyle light15 = TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.w300,
+    fontFamily: GoogleFonts.poppins().fontFamily,
+    color: AppColors.primaryColor,
+  );
+
   static TextStyle extraLight12 = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.w200,
@@ -62,6 +76,13 @@ class Styles {
     color: const Color(0xff240F4F),
   );
 
+  static TextStyle medium18 = TextStyle(
+    fontSize: 18,
+    fontWeight: FontWeight.w500,
+    fontFamily: GoogleFonts.poppins().fontFamily,
+    color: AppColors.primaryColor,
+  );
+
   static TextStyle bold18 = TextStyle(
     fontSize: 18,
     fontWeight: FontWeight.bold,
@@ -74,6 +95,13 @@ class Styles {
     fontWeight: FontWeight.w700,
     fontFamily: GoogleFonts.poppins().fontFamily,
     color: AppColors.whiteColor,
+  );
+
+  static TextStyle light20 = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.w300,
+    fontFamily: GoogleFonts.poppins().fontFamily,
+    color: Color(0xff1E1E1E).withValues(alpha: .5),
   );
 
   static TextStyle tahaBold18 = TextStyle(

@@ -10,6 +10,10 @@ class Assets {
   /// assets/images/basmala.png
   static const String imagesBasmala = "assets/images/basmala.png";
 
+  /// Assets for imagesClock
+  /// assets/images/clock.svg
+  static const String imagesClock = "assets/images/clock.svg";
+
   /// Assets for imagesDoaaHeader
   /// assets/images/doaa_header.png
   static const String imagesDoaaHeader = "assets/images/doaa_header.png";
@@ -25,6 +29,14 @@ class Assets {
   /// Assets for imagesNoQuran
   /// assets/images/no_quran.jpg
   static const String imagesNoQuran = "assets/images/no_quran.jpg";
+
+  /// Assets for imagesPrayerBackground
+  /// assets/images/prayer_background.png
+  static const String imagesPrayerBackground = "assets/images/prayer_background.png";
+
+  /// Assets for imagesPrayerIcon
+  /// assets/images/prayer_icon.svg
+  static const String imagesPrayerIcon = "assets/images/prayer_icon.svg";
 
   /// Assets for imagesQuranHeader
   /// assets/images/quran_header.png
@@ -45,5 +57,9 @@ class Assets {
   /// Assets for imagesSuraMark
   /// assets/images/sura_mark.svg
   static const String imagesSuraMark = "assets/images/sura_mark.svg";
+
+  /// Assets for imagesTimerIcon
+  /// assets/images/timer_icon.svg
+  static const String imagesTimerIcon = "assets/images/timer_icon.svg";
 }
 

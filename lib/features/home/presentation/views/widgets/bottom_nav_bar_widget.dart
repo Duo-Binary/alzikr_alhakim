@@ -20,13 +20,18 @@ class BottomNavBarWidget extends StatelessWidget {
       onTap: onTap,
       items: [
         bottomNavBarItem(BottomNavModel(
-            image: Assets.imagesQuranIcon,
+            image: Assets.imagesPrayerIcon,
             color: activeIndex == 0
                 ? AppColors.whiteColor
                 : AppColors.whiteColor.withValues(alpha: .5))),
         bottomNavBarItem(BottomNavModel(
-            image: Assets.imagesDoaaIcon,
+            image: Assets.imagesQuranIcon,
             color: activeIndex == 1
+                ? AppColors.whiteColor
+                : AppColors.whiteColor.withValues(alpha: .5))),
+        bottomNavBarItem(BottomNavModel(
+            image: Assets.imagesDoaaIcon,
+            color: activeIndex == 2
                 ? AppColors.whiteColor
                 : AppColors.whiteColor.withValues(alpha: .5))),
       ],

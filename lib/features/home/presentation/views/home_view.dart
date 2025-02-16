@@ -1,3 +1,4 @@
+import 'package:alzikr_alhakim/features/prayer/presentation/views/prayer_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../../doa/presentation/view/doa_view.dart';
@@ -14,6 +15,7 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   int activeIndex = 0;
   List views = const [
+    PrayerView(),
     QuranView(),
     DoaaView(),
   ];
@@ -27,9 +29,10 @@ class _HomeViewState extends State<HomeView> {
         child: BottomNavBarWidget(
           activeIndex: activeIndex,
           onTap: (index) {
-            setState(() {
+            if (activeIndex != index) {
               activeIndex = index;
-            });
+            }
+            setState(() {});
           },
         ),
       ),

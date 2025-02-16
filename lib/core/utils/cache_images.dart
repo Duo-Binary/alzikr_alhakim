@@ -21,6 +21,9 @@ class CacheImages {
     Assets.imagesQuranIcon,
     Assets.imagesSaveFilled,
     Assets.imagesSuraMark,
+    Assets.imagesPrayerIcon,
+    Assets.imagesTimerIcon,
+    Assets.imagesClock,
   ];
 
   static Future<void> loadImages(BuildContext context) async {
