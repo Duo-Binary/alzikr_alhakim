@@ -8,10 +8,11 @@ class CacheImages {
   CacheImages._();
   static final List<String> _pngImages = [
     Assets.imagesBackground,
-    Assets.imagesQuranHeader,
-    Assets.imagesDoaaHeader,
     Assets.imagesBasmala,
+    Assets.imagesDoaaHeader,
     Assets.imagesNoQuran,
+    Assets.imagesPrayerBackground,
+    Assets.imagesQuranHeader,
     Assets.imagesSuraHeader,
   ];
 
@@ -24,6 +25,18 @@ class CacheImages {
     Assets.imagesPrayerIcon,
     Assets.imagesTimerIcon,
     Assets.imagesClock,
+    Assets.imagesActiveFajr,
+    Assets.imagesActiveShrok,
+    Assets.imagesActiveDzhur,
+    Assets.imagesActiveAser,
+    Assets.imagesActiveMagrab,
+    Assets.imagesUnactiveFajr,
+    Assets.imagesUnactiveShrok,
+    Assets.imagesUnactiveDzuhur,
+    Assets.imagesUnactiveAser,
+    Assets.imagesUnactiveMagrab,
+    Assets.imagesVoice,
+    Assets.imagesSilent,
   ];
 
   static Future<void> loadImages(BuildContext context) async {

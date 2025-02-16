@@ -1,5 +1,6 @@
 import 'package:alzikr_alhakim/core/utils/cache_images.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
@@ -13,5 +14,8 @@ Future<void> initMain() async {
   await CacheImages.loadSvgImages();
   await initializeDateFormatting('ar_EG', null);
   await SharedPrefService.init();
+  SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
+    statusBarIconBrightness: Brightness.dark,
+  ));
   runApp(const AlzikrAlhakim());
 }

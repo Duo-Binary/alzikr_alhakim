@@ -1,6 +1,6 @@
-import 'package:alzikr_alhakim/core/widgets/custom_backgrond_container.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../core/widgets/custom_scaffold.dart';
 import 'widgets/sura_view_body.dart';
 
 class SuraView extends StatelessWidget {
@@ -9,9 +9,6 @@ class SuraView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.black,
-      body: CustomBackgroundContainer(child: SuraViewBody(index: index)),
-    );
+    return CustomScaffold(child: SuraViewBody(index: index));
   }
 }

@@ -24,9 +24,8 @@ class PrayerListTileItem extends StatelessWidget {
           trailing: PrayerListTileRow(
               isPrayerTime: prayerListTileModel.isPrayerTime,
               height: 22,
-              image: prayerListTileModel.isPrayerTime
-                  ? Assets.imagesVoice
-                  : Assets.imagesSilent,
+              image:
+                  prayerListTileModel.isPrayerTime ? Assets.imagesVoice : null,
               text: prayerListTileModel.trailingText),
         ));
   }

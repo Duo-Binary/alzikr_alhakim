@@ -13,10 +13,10 @@ class AlzikrAlhakim extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     CacheImages.loadImages(context);
+
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => SuraCubit()),
-        
         BlocProvider(create: (context) => DoaBloc()),
       ],
       child: ScreenUtilInit(

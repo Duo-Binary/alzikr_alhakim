@@ -31,7 +31,7 @@ class Styles {
     fontSize: 12,
     fontWeight: FontWeight.normal,
     fontFamily: GoogleFonts.poppins().fontFamily,
-    color: const Color(0xffA1A1A1),
+    color: AppColors.secondaryColor,
   );
 
   static TextStyle light15 = TextStyle(
