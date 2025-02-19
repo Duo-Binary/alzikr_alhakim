@@ -7,15 +7,17 @@ class CustomSvg extends StatelessWidget {
       required this.image,
       this.color,
       this.height,
+      this.width,
       this.fit = BoxFit.contain});
   final String image;
   final Color? color;
-  final double? height;
+  final double? height, width;
   final BoxFit fit;
 
   @override
   Widget build(BuildContext context) {
     // ignore: deprecated_member_use
-    return SvgPicture.asset(image, color: color, height: height, fit: fit);
+    return SvgPicture.asset(image,
+        color: color, height: height, width: width, fit: fit);
   }
 }

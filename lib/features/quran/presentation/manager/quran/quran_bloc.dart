@@ -1,4 +1,4 @@
-import 'package:alzikr_alhakim/core/utils/constants.dart';
+import 'package:alzikr_alhakim/core/utils/constants/quran_data.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'quran_event.dart';
@@ -11,7 +11,7 @@ class QuranBloc extends Bloc<QuranEvent, QuranState> {
   QuranBloc() : super(QuranInitial()) {
     on<QuranEvent>((event, emit) {
       if (event is WriteQuranEvent) {
-        searchList = Constants.arabicName
+        searchList = QuranData.arabicName
             .where((element) =>
                 element['name'].toString().contains(event.suraName))
             .toList();

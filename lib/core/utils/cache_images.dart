@@ -8,10 +8,11 @@ class CacheImages {
   CacheImages._();
   static final List<String> _pngImages = [
     Assets.imagesBackground,
-    Assets.imagesQuranHeader,
-    Assets.imagesDoaaHeader,
     Assets.imagesBasmala,
+    Assets.imagesDoaaHeader,
     Assets.imagesNoQuran,
+    Assets.imagesPrayerBackground,
+    Assets.imagesQuranHeader,
     Assets.imagesSuraHeader,
   ];
 
@@ -21,11 +22,25 @@ class CacheImages {
     Assets.imagesQuranIcon,
     Assets.imagesSaveFilled,
     Assets.imagesSuraMark,
+    Assets.imagesPrayerIcon,
+    Assets.imagesTimerIcon,
+    Assets.imagesClock,
+    Assets.imagesActiveFajr,
+    Assets.imagesActiveShrok,
+    Assets.imagesActiveDzhur,
+    Assets.imagesActiveAser,
+    Assets.imagesActiveMagrab,
+    Assets.imagesUnactiveFajr,
+    Assets.imagesUnactiveShrok,
+    Assets.imagesUnactiveDzuhur,
+    Assets.imagesUnactiveAser,
+    Assets.imagesUnactiveMagrab,
+    Assets.imagesVoice,
+    Assets.imagesSilent,
   ];
 
   static Future<void> loadImages(BuildContext context) async {
     await _loadPngImages(context);
-    await _loadSvgImages();
     log("loaded images successfully....");
   }
 
@@ -35,10 +50,10 @@ class CacheImages {
     }
   }
 
-  static Future<void> _loadSvgImages() async {
+  static Future<void> loadSvgImages() async {
     for (var image in _svgImages) {
       var loader = SvgAssetLoader(image);
-      svg.cache
+      await svg.cache
           .putIfAbsent(loader.cacheKey(null), () => loader.loadBytes(null));
     }
   }

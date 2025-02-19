@@ -1,4 +1,4 @@
-import 'package:alzikr_alhakim/core/utils/constants.dart';
+import 'package:alzikr_alhakim/core/utils/constants/quran_data.dart';
 import 'package:alzikr_alhakim/features/quran/data/models/quran_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -19,7 +19,7 @@ class QuranSliverList extends StatelessWidget {
             itemCount: quran.searchList.isEmpty ? 114 : quran.searchList.length,
             itemBuilder: (context, index) {
               final list = quran.searchList.isEmpty
-                  ? Constants.arabicName[index]
+                  ? QuranData.arabicName[index]
                   : quran.searchList[index];
 
               return QuranItem(

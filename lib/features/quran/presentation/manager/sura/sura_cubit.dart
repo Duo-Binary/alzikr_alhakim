@@ -1,6 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../../core/service/shared_pref_service.dart';
+import '../../../../../core/utils/service/shared_pref_service.dart';
 
 part 'sura_state.dart';
 
