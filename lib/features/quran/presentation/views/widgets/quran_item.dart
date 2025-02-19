@@ -1,5 +1,6 @@
 import 'package:alzikr_alhakim/core/utils/navigation.dart';
 import 'package:alzikr_alhakim/core/utils/styles.dart';
+import 'package:alzikr_alhakim/core/widgets/custom_divider.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../core/utils/format_verse_number.dart';
@@ -17,7 +18,7 @@ class QuranItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        if (int.parse(quran.id) == 1) const Divider(),
+        if (int.parse(quran.id) == 1) const CustomDivider(thickness: .5),
         ListTile(
           horizontalTitleGap: 20,
           onTap: () => Navigation.push(context, SuraView(index: index)),
@@ -29,7 +30,7 @@ class QuranItem extends StatelessWidget {
               style: Styles.light12),
           trailing: Text(quran.englishName, style: Styles.bold18),
         ),
-        const Divider(thickness: 2),
+        const CustomDivider(),
       ],
     );
   }
