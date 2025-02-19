@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/date_symbol_data_local.dart';
 
-import '../service/shared_pref_service.dart';
+import 'service/shared_pref_service.dart';
 import 'alzikar_alhakim.dart';
 import 'bloc_observer.dart';
 

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:alzikr_alhakim/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +12,7 @@ class PrayerTimeAndPlaceWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log("prayer");
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [

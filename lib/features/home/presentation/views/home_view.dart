@@ -1,7 +1,7 @@
-import 'package:alzikr_alhakim/features/prayer/presentation/views/prayer_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../../doa/presentation/view/doa_view.dart';
+import '../../../prayer/presentation/views/prayer_view.dart';
 import '../../../quran/presentation/views/quran_view.dart';
 import 'widgets/bottom_nav_bar_widget.dart';
 

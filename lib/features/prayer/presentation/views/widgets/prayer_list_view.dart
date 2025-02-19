@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:alzikr_alhakim/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
@@ -8,6 +10,7 @@ class PrayerListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    log("listview");
     return Expanded(
       child: Container(
         decoration: const BoxDecoration(

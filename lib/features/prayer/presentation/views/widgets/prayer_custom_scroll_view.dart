@@ -1,4 +1,4 @@
-import 'package:alzikr_alhakim/core/constants/constants.dart';
+import 'package:alzikr_alhakim/core/utils/constants/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -11,7 +11,7 @@ class PrayerCustomScrollView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final prayer = context.read<PrayerCubit>();
+    final prayer = context.watch<PrayerCubit>();
     return CustomScrollView(
       physics: const BouncingScrollPhysics(),
       slivers: [

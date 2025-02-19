@@ -1,7 +1,7 @@
 import 'dart:developer';
 import 'package:alzikr_alhakim/core/utils/show_success_pop_up.dart';
 import 'package:alzikr_alhakim/features/doa/data/model/doa_model.dart';
-import 'package:alzikr_alhakim/core/constants/doa_data.dart';
+import 'package:alzikr_alhakim/core/utils/constants/doa_data.dart';
 import 'package:alzikr_alhakim/features/doa/presentation/manager/doa/doa_event.dart';
 import 'package:alzikr_alhakim/features/doa/presentation/manager/doa/doa_state.dart';
 import 'package:flutter/material.dart';

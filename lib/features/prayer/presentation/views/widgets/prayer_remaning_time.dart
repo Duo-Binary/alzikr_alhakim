@@ -12,7 +12,7 @@ class PrayerRemaningTime extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final prayer = context.read<PrayerCubit>().getRemaningTime();
+    final prayer = context.watch<PrayerCubit>().getRemaningTime();
 
     return Row(
       spacing: 20,

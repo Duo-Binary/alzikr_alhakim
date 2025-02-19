@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'check_view_index.dart';
-import '../constants/quran_data.dart';
+import 'constants/quran_data.dart';
 
 double getFontHeight(Size size, int index) {
   return checkViewIndex(index, QuranData.font2h) != null

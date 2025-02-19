@@ -1,4 +1,4 @@
-import 'package:alzikr_alhakim/core/constants/quran_data.dart';
+import 'package:alzikr_alhakim/core/utils/constants/quran_data.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'quran_event.dart';
