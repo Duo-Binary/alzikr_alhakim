@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:quran/quran.dart';
 
 import 'sura_juz_and_page_widget.dart';
@@ -10,15 +11,18 @@ class SuraViewHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        SuraAndDoaaArrowBack(
-            text: getSurahNameArabic(getPageData(index)[0]['surah'])),
-        Spacer(),
-        SuraJuzAndPageWidget(index: index),
-        Spacer(flex: 2),
-      ],
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 12.w),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          SuraAndDoaaArrowBack(
+              text: getSurahNameArabic(getPageData(index)[0]['surah'])),
+          Spacer(),
+          SuraJuzAndPageWidget(index: index),
+          Spacer(flex: 2),
+        ],
+      ),
     );
   }
 }

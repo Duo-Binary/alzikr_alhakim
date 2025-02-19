@@ -6,6 +6,6 @@ class NoSuraWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Image.asset(Assets.imagesNoQuran, fit: BoxFit.fill);
+    return Image.asset(Assets.imagesNoQuran, fit: BoxFit.cover);
   }
 }

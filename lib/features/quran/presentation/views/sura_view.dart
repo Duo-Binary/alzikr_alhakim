@@ -4,7 +4,7 @@ import '../../../../core/widgets/custom_scaffold.dart';
 import 'widgets/sura_view_body.dart';
 
 class SuraView extends StatelessWidget {
-  const SuraView({super.key, this.index = 0});
+  const SuraView({super.key, this.index = 1});
   final int index;
 
   @override
