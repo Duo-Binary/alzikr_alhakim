@@ -17,11 +17,10 @@ class PrayerCubit extends Cubit<PrayerState> {
   Timer? _timer;
   PrayerModel? _lastPrayer;
   List<PrayerModel> prayerList = [];
+  String? locationName = "Cairo, Egypt (default)";
 
   void _startTimer() async {
-    await _prayerRepo.getCurrentLocation();
-    prayerList.clear();
-    getRemaningTime();
+    await getLocationName();
 
     _timer = Timer.periodic(const Duration(minutes: 1), (timer) {
       getRemaningTime();
@@ -39,6 +38,16 @@ class PrayerCubit extends Cubit<PrayerState> {
       emit(PrayerSuccess());
     }
     return prayer['prayer'];
+  }
+
+  Future<void> getLocationName() async {
+    final location = await _prayerRepo.getCurrentLocation();
+    if (location != null) {
+      locationName = location;
+    }
+    prayerList.clear();
+    getRemaningTime();
+    emit(GetLocationSuccess());
   }
 
   @override

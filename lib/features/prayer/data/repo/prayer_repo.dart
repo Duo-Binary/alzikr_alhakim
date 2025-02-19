@@ -1,4 +1,4 @@
 abstract class PrayerRepo {
   Map getRemaningTime();
-  Future<void> getCurrentLocation();
+  Future<String?> getCurrentLocation();
 }

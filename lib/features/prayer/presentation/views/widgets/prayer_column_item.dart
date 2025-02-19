@@ -10,7 +10,7 @@ class PrayerColumnItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       spacing: prayerColumnModel.size ?? 0,
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: prayerColumnModel.crossAxisAlignment,
       children: [
         Text(prayerColumnModel.text1,
             style: prayerColumnModel.style1 ?? Styles.regular12),

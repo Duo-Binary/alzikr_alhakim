@@ -1,9 +1,6 @@
-import 'dart:developer';
-
 import 'package:adhan/adhan.dart';
 import 'package:alzikr_alhakim/core/utils/service/location_service.dart';
 import 'package:geocoding/geocoding.dart';
-// import 'package:geolocator/geolocator.dart';
 
 import '../models/prayer_model.dart';
 import 'prayer_repo.dart';
@@ -12,16 +9,16 @@ class PrayerRepoImpl extends PrayerRepo {
   final LocationService _locationService = LocationService();
   List<PrayerModel> _prayerList = [];
 
-  double? latitude, longitude;
+  double? _latitude, _longitude;
 
   @override
   Map getRemaningTime() {
-    if (latitude == null && longitude == null) {
-      latitude = 30.045743221239082;
-      longitude = 31.23537888915283;
+    if (_latitude == null && _longitude == null) {
+      _latitude = 30.045743221239082;
+      _longitude = 31.23537888915283;
     }
 
-    final myCoordinates = Coordinates(latitude!, longitude!);
+    final myCoordinates = Coordinates(_latitude!, _longitude!);
     final params = CalculationMethod.egyptian.getParameters();
 
     final prayerTimes = PrayerTimes.today(myCoordinates, params);
@@ -72,29 +69,19 @@ class PrayerRepoImpl extends PrayerRepo {
   }
 
   @override
-  Future<void> getCurrentLocation() async {
+  Future<String?> getCurrentLocation() async {
     final location = await _locationService.getCurrentLocation();
 
-    latitude = location?.latitude;
-    longitude = location?.longitude;
-    // getRemaningTime();
+    _latitude = location?.latitude;
+    _longitude = location?.longitude;
 
-    // List<Placemark> placemarks =
-    //     await placemarkFromCoordinates(latitude!, longitude!);
-    // log("placemarks: $placemarks");
-
-    // if (placemarks.isNotEmpty) {
-    //   String city = placemarks.first.locality ?? "";
-    //   String country = placemarks.first.country ?? "";
-
-    //   final translator = GoogleTranslator();
-    //   final translatedCity =
-    //       await translator.translate(city, from: "en", to: "ar");
-    //   final translatedCountry =
-    //       await translator.translate(country, from: 'en', to: 'ar');
-
-    //   log("translatedCity: $translatedCity");
-    //   log("translatedCountry: $translatedCountry");
-    // }
+    if (_latitude != null && _longitude != null) {
+      List<Placemark> placemarks = await placemarkFromCoordinates(
+        _latitude!,
+        _longitude!,
+      );
+      return "${placemarks.first.locality}, ${placemarks.first.country}";
+    }
+    return null;
   }
 }
