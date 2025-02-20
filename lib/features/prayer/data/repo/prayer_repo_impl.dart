@@ -1,5 +1,6 @@
 import 'package:adhan/adhan.dart';
 import 'package:alzikr_alhakim/core/utils/service/location_service.dart';
+import 'package:alzikr_alhakim/core/utils/service/notification_service.dart';
 import 'package:geocoding/geocoding.dart';
 
 import '../models/prayer_model.dart';
@@ -18,20 +19,11 @@ class PrayerRepoImpl extends PrayerRepo {
       _longitude = 31.23537888915283;
     }
 
-    final myCoordinates = Coordinates(_latitude!, _longitude!);
-    final params = CalculationMethod.egyptian.getParameters();
-
-    final prayerTimes = PrayerTimes.today(myCoordinates, params);
+    List<Map<String, DateTime>> list =
+        _getPrayersTime(latitude: _latitude!, longitude: _longitude!);
     DateTime now = DateTime.now();
 
-    List<Map<String, DateTime>> list = [
-      {"الفجر": prayerTimes.fajr},
-      {"الشروق": prayerTimes.sunrise},
-      {"الظهر": prayerTimes.dhuhr},
-      {"العصر": prayerTimes.asr},
-      {"المغرب": prayerTimes.maghrib},
-      {"العشاء": prayerTimes.isha},
-    ];
+
     _prayerList = list.map((prayer) {
       String prayerName = prayer.keys.first;
       DateTime prayerTime = prayer.values.first;
@@ -57,7 +49,7 @@ class PrayerRepoImpl extends PrayerRepo {
         return {'prayer': newPrayer, 'prayerList': _prayerList};
       }
     }
-    DateTime tomorrowFajr = prayerTimes.fajr.add(Duration(days: 1));
+    DateTime tomorrowFajr = list[0]["الفجر"]!.add(Duration(days: 1));
 
     Duration remaining = tomorrowFajr.difference(now);
     String formattedTime =
@@ -68,12 +60,32 @@ class PrayerRepoImpl extends PrayerRepo {
     return {'prayer': newPrayer, 'prayerList': _prayerList};
   }
 
+  List<Map<String, DateTime>> _getPrayersTime(
+      {required double latitude, required double longitude}) {
+    final myCoordinates = Coordinates(latitude, longitude);
+    final params = CalculationMethod.egyptian.getParameters();
+
+    final prayerTimes = PrayerTimes.today(myCoordinates, params);
+    List<Map<String, DateTime>> list = [
+      {"الفجر": prayerTimes.fajr},
+      {"الشروق": prayerTimes.sunrise},
+      {"الظهر": prayerTimes.dhuhr},
+      {"العصر": prayerTimes.asr},
+      {"المغرب": prayerTimes.maghrib},
+      {"العشاء": prayerTimes.isha},
+    ];
+
+    return list;
+  }
+
   @override
   Future<String?> getCurrentLocation() async {
     final location = await _locationService.getCurrentLocation();
 
     _latitude = location?.latitude;
     _longitude = location?.longitude;
+
+    await _getNotifications(latitude: _latitude!, longitude: _longitude!);
 
     if (_latitude != null && _longitude != null) {
       List<Placemark> placemarks = await placemarkFromCoordinates(
@@ -82,6 +94,21 @@ class PrayerRepoImpl extends PrayerRepo {
       );
       return "${placemarks.first.locality}, ${placemarks.first.country}";
     }
+
     return null;
+  }
+
+  Future<void> _getNotifications(
+      {required double latitude, required double longitude}) async {
+    for (var prayer
+        in _getPrayersTime(latitude: latitude, longitude: longitude)) {
+      if (prayer.values.first.isAfter(DateTime.now())) {
+        await NotificationService().initNotifications();
+        await NotificationService().showScheduledNotification(
+            prayerName: prayer.keys.first,
+            hour: prayer.values.first.hour,
+            minute: prayer.values.first.minute);
+      }
+    }
   }
 }

@@ -1,4 +1,3 @@
-import 'package:alzikr_alhakim/core/utils/service/notification_service.dart';
 import 'package:flutter/material.dart';
 
 import '../../../doa/presentation/view/doa_view.dart';
@@ -25,11 +24,6 @@ class _HomeViewState extends State<HomeView> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: views[activeIndex],
-      floatingActionButton: FloatingActionButton(
-        onPressed: () async {
-         await NotificationService().initNotifications();
-        },
-      ),
       bottomNavigationBar: Directionality(
         textDirection: TextDirection.rtl,
         child: BottomNavBarWidget(
