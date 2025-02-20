@@ -1,3 +1,4 @@
+import 'package:geolocator/geolocator.dart' as geolocator;
 import 'package:location/location.dart';
 
 class LocationService {
@@ -24,10 +25,10 @@ class LocationService {
     return true;
   }
 
-  Future<LocationData?> getCurrentLocation() async {
+  Future<geolocator.Position?> getCurrentLocation() async {
     if (await _checkServiceEnabled()) {
       if (await _checkLocationPermission()) {
-        final location = await _location.getLocation();
+        final location = await geolocator.Geolocator.getCurrentPosition();
         return location;
       }
     }

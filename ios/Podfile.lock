@@ -2,6 +2,8 @@ PODS:
   - Flutter (1.0.0)
   - geocoding_ios (1.0.5):
     - Flutter
+  - geolocator_apple (1.2.0):
+    - Flutter
   - location (0.0.1):
     - Flutter
   - package_info_plus (0.4.5):
@@ -18,6 +20,7 @@ PODS:
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - geocoding_ios (from `.symlinks/plugins/geocoding_ios/ios`)
+  - geolocator_apple (from `.symlinks/plugins/geolocator_apple/ios`)
   - location (from `.symlinks/plugins/location/ios`)
   - package_info_plus (from `.symlinks/plugins/package_info_plus/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
@@ -29,6 +32,8 @@ EXTERNAL SOURCES:
     :path: Flutter
   geocoding_ios:
     :path: ".symlinks/plugins/geocoding_ios/ios"
+  geolocator_apple:
+    :path: ".symlinks/plugins/geolocator_apple/ios"
   location:
     :path: ".symlinks/plugins/location/ios"
   package_info_plus:
@@ -43,6 +48,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   geocoding_ios: d7460f56e80e118d57678efe5c2cdc888739ff18
+  geolocator_apple: 9bcea1918ff7f0062d98345d238ae12718acfbc1
   location: d5cf8598915965547c3f36761ae9cc4f4e87d22e
   package_info_plus: c0502532a26c7662a62a356cebe2692ec5fe4ec4
   path_provider_foundation: 2b6b4c569c0fb62ec74538f866245ac84301af46

@@ -46,7 +46,7 @@ class PrayerCubit extends Cubit<PrayerState> {
       locationName = location;
     }
     prayerList.clear();
-    getRemaningTime();
+    // getRemaningTime();
     emit(GetLocationSuccess());
   }
 
