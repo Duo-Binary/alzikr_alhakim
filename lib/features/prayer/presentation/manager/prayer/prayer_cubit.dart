@@ -42,6 +42,7 @@ class PrayerCubit extends Cubit<PrayerState> {
 
   Future<void> getLocationName() async {
     final location = await _prayerRepo.getCurrentLocation();
+    await _prayerRepo.initNotifications();
     if (location != null) {
       locationName = location;
     }
