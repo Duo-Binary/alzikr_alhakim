@@ -22,14 +22,6 @@ class Assets {
   /// assets/images/active_shrok.svg
   static const String imagesActiveShrok = "assets/images/active_shrok.svg";
 
-  /// Assets for imagesBackground
-  /// assets/images/background.png
-  static const String imagesBackground = "assets/images/background.png";
-
-  /// Assets for imagesBasmala
-  /// assets/images/basmala.png
-  static const String imagesBasmala = "assets/images/basmala.png";
-
   /// Assets for imagesClock
   /// assets/images/clock.svg
   static const String imagesClock = "assets/images/clock.svg";
@@ -45,6 +37,10 @@ class Assets {
   /// Assets for imagesLeadingIcon
   /// assets/images/leading_icon.svg
   static const String imagesLeadingIcon = "assets/images/leading_icon.svg";
+
+  /// Assets for imagesLogo
+  /// assets/images/logo.png
+  static const String imagesLogo = "assets/images/logo.png";
 
   /// Assets for imagesNoQuran
   /// assets/images/no_quran.jpg
@@ -73,10 +69,6 @@ class Assets {
   /// Assets for imagesSilent
   /// assets/images/silent.svg
   static const String imagesSilent = "assets/images/silent.svg";
-
-  /// Assets for imagesSuraHeader
-  /// assets/images/sura_header.png
-  static const String imagesSuraHeader = "assets/images/sura_header.png";
 
   /// Assets for imagesSuraMark
   /// assets/images/sura_mark.svg

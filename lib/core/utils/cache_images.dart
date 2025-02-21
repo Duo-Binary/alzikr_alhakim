@@ -7,13 +7,10 @@ import 'package:flutter_svg/svg.dart';
 class CacheImages {
   CacheImages._();
   static final List<String> _pngImages = [
-    Assets.imagesBackground,
-    Assets.imagesBasmala,
     Assets.imagesDoaaHeader,
     Assets.imagesNoQuran,
     Assets.imagesPrayerBackground,
     Assets.imagesQuranHeader,
-    Assets.imagesSuraHeader,
   ];
 
   static final List<String> _svgImages = [
