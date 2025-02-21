@@ -16,17 +16,14 @@ class DoaTextBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        width: MediaQuery.of(context).size.width,
+      child: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 10),
-          child: SingleChildScrollView(
-            child: Text(
-              "${doa.verses![doaaCubit.currentVerseIndex].text}",
-              textAlign: TextAlign.justify,
-              style: Styles.doaaContent20,
-            ),
+          padding: const EdgeInsets.only(right: 20, left: 20, top: 10),
+          child: Text(
+            "${doa.verses![doaaCubit.currentVerseIndex].text}",
+            textAlign: TextAlign.justify,
+            style: Styles.doaaContent26,
           ),
         ),
       ),

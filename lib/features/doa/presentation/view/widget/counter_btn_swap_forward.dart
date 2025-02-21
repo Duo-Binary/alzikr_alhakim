@@ -26,8 +26,7 @@ class CounterBtnSwapForward extends StatelessWidget {
           Text(
             formatVerseNumber(
                 int.parse((doaaCubit.currentVerseIndex + 1).toString())),
-            style: Styles.counterTextStyle20
-          ,
+            style: Styles.counterTextStyle16,
           ),
           const Icon(
             Icons.arrow_back_ios,

@@ -18,7 +18,7 @@ class DoaCounterAndPageNumberBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.symmetric(horizontal: 64.w),
+      padding: EdgeInsets.symmetric(horizontal: 64.w),
       child: Stack(
         children: [
           CounterArrowAndText(doaaCubit: doaaCubit, doa: doa),

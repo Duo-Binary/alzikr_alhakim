@@ -4,6 +4,7 @@ import 'package:alzikr_alhakim/core/utils/styles.dart';
 import 'package:alzikr_alhakim/features/doa/data/model/doa_model.dart';
 import 'package:alzikr_alhakim/features/doa/presentation/manager/doa/doa_bloc.dart';
 import 'package:flutter/material.dart';
+
 class CounterBtnSwapBackward extends StatelessWidget {
   const CounterBtnSwapBackward({
     super.key,
@@ -27,7 +28,7 @@ class CounterBtnSwapBackward extends StatelessWidget {
           ),
           Text(
             formatVerseNumber(int.parse(doa.verses!.length.toString())),
-            style: Styles.counterTextStyle20,
+            style: Styles.counterTextStyle16,
           ),
         ],
       ),

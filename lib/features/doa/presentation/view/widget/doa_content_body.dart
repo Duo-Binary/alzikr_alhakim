@@ -18,21 +18,17 @@ class DoaContentBody extends StatelessWidget {
 
     return BlocBuilder<DoaBloc, DoaState>(
       builder: (context, state) {
-        return ConstrainedBox(
-          constraints:
-              BoxConstraints(maxHeight: MediaQuery.of(context).size.height),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 10),
-              DoaHeaderBody(doaaCubit: doaaCubit, doa: doa),
-              const SizedBox(height: 10),
-              DoaTextBody(doa: doa, doaaCubit: doaaCubit),
-              const SizedBox(height: 30),
-              DoaCounterAndPageNumberBody(doaaCubit: doaaCubit, doa: doa),
-              const SizedBox(height: 4),
-            ],
-          ),
+        return Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 10),
+            DoaHeaderBody(doaaCubit: doaaCubit, doa: doa),
+            // const SizedBox(height: 10),
+            DoaTextBody(doa: doa, doaaCubit: doaaCubit),
+            // const SizedBox(height: 30),
+            DoaCounterAndPageNumberBody(doaaCubit: doaaCubit, doa: doa),
+            const SizedBox(height: 4),
+          ],
         );
       },
     );
