@@ -1,5 +1,4 @@
-import 'dart:developer';
-
+import 'package:alzikr_alhakim/core/utils/get_prayers_time.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:timezone/data/latest.dart' as tz;
@@ -70,13 +69,8 @@ class NotificationService {
   Future<void> _setTimeZone() async {
     tz.initializeTimeZones();
 
-    log("local befor: ${tz.local.name}");
-    log("time befor: ${tz.TZDateTime.now(tz.local)}");
     final String currentTimeZone = await FlutterTimezone.getLocalTimezone();
     tz.setLocalLocation(tz.getLocation(currentTimeZone));
-
-    log("local after: ${tz.local.name}");
-    log("time after: ${tz.TZDateTime.now(tz.local)}");
   }
 
   NotificationDetails _setNotificationsDetails() {
@@ -89,5 +83,19 @@ class NotificationService {
     NotificationDetails notificationDetails =
         NotificationDetails(android: android, iOS: iOS);
     return notificationDetails;
+  }
+
+  Future<void> getNotifications(
+      {required double latitude, required double longitude}) async {
+    for (var prayer
+        in getPrayersTime(latitude: latitude, longitude: longitude)) {
+      if (prayer.values.first.isAfter(DateTime.now())) {
+        // await NotificationService().initNotifications();
+        await NotificationService().showScheduledNotification(
+            prayerName: prayer.keys.first,
+            hour: prayer.values.first.hour,
+            minute: prayer.values.first.minute);
+      }
+    }
   }
 }

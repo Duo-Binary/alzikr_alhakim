@@ -1,6 +1,7 @@
-import 'package:adhan/adhan.dart';
+import 'package:alzikr_alhakim/core/utils/get_prayers_time.dart';
 import 'package:alzikr_alhakim/core/utils/service/location_service.dart';
 import 'package:alzikr_alhakim/core/utils/service/notification_service.dart';
+import 'package:alzikr_alhakim/core/utils/service/work_manager_service.dart';
 import 'package:geocoding/geocoding.dart';
 
 import '../models/prayer_model.dart';
@@ -8,6 +9,7 @@ import 'prayer_repo.dart';
 
 class PrayerRepoImpl extends PrayerRepo {
   final LocationService _locationService = LocationService();
+  final NotificationService _notificationService = NotificationService();
   List<PrayerModel> _prayerList = [];
 
   double? _latitude, _longitude;
@@ -20,9 +22,8 @@ class PrayerRepoImpl extends PrayerRepo {
     }
 
     List<Map<String, DateTime>> list =
-        _getPrayersTime(latitude: _latitude!, longitude: _longitude!);
+        getPrayersTime(latitude: _latitude!, longitude: _longitude!);
     DateTime now = DateTime.now();
-
 
     _prayerList = list.map((prayer) {
       String prayerName = prayer.keys.first;
@@ -60,24 +61,6 @@ class PrayerRepoImpl extends PrayerRepo {
     return {'prayer': newPrayer, 'prayerList': _prayerList};
   }
 
-  List<Map<String, DateTime>> _getPrayersTime(
-      {required double latitude, required double longitude}) {
-    final myCoordinates = Coordinates(latitude, longitude);
-    final params = CalculationMethod.egyptian.getParameters();
-
-    final prayerTimes = PrayerTimes.today(myCoordinates, params);
-    List<Map<String, DateTime>> list = [
-      {"الفجر": prayerTimes.fajr},
-      {"الشروق": prayerTimes.sunrise},
-      {"الظهر": prayerTimes.dhuhr},
-      {"العصر": prayerTimes.asr},
-      {"المغرب": prayerTimes.maghrib},
-      {"العشاء": prayerTimes.isha},
-    ];
-
-    return list;
-  }
-
   @override
   Future<String?> getCurrentLocation() async {
     final location = await _locationService.getCurrentLocation();
@@ -85,7 +68,9 @@ class PrayerRepoImpl extends PrayerRepo {
     _latitude = location?.latitude;
     _longitude = location?.longitude;
 
-    await _getNotifications(latitude: _latitude!, longitude: _longitude!);
+    // work manager for notification
+    await WorkManagerService()
+        .intitWorkManager(latitude: _latitude!, longitude: _longitude!);
 
     if (_latitude != null && _longitude != null) {
       List<Placemark> placemarks = await placemarkFromCoordinates(
@@ -98,17 +83,8 @@ class PrayerRepoImpl extends PrayerRepo {
     return null;
   }
 
-  Future<void> _getNotifications(
-      {required double latitude, required double longitude}) async {
-    for (var prayer
-        in _getPrayersTime(latitude: latitude, longitude: longitude)) {
-      if (prayer.values.first.isAfter(DateTime.now())) {
-        await NotificationService().initNotifications();
-        await NotificationService().showScheduledNotification(
-            prayerName: prayer.keys.first,
-            hour: prayer.values.first.hour,
-            minute: prayer.values.first.minute);
-      }
-    }
+  @override
+  Future<void> initNotifications() async {
+    await _notificationService.initNotifications();
   }
 }
