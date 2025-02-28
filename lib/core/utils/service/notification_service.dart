@@ -11,7 +11,7 @@ class NotificationService {
   static onTap(NotificationResponse details) {}
   Future<void> initNotifications() async {
     InitializationSettings initializationSettings = InitializationSettings(
-      android: AndroidInitializationSettings("@mipmap/ic_launcher"),
+      android: AndroidInitializationSettings("@mipmap/launcher_icon"),
       iOS: DarwinInitializationSettings(
         requestAlertPermission: true,
         requestBadgePermission: true,
@@ -85,6 +85,7 @@ class NotificationService {
     return notificationDetails;
   }
 
+  @pragma('vm:entry-point')
   Future<void> getNotifications(
       {required double latitude, required double longitude}) async {
     for (var prayer

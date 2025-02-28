@@ -2,7 +2,6 @@ import 'package:alzikr_alhakim/core/utils/colors.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 import 'get_font_height_and_size.dart';
 
@@ -10,112 +9,112 @@ class Styles {
   static TextStyle bold30 = TextStyle(
     fontSize: _getResponsiveFontSize(30),
     fontWeight: FontWeight.bold,
-    fontFamily: GoogleFonts.poppins().fontFamily,
+    fontFamily: "poppins",
     color: AppColors.blackColor,
   );
 
   static TextStyle regular15 = TextStyle(
     fontSize: _getResponsiveFontSize(15),
     fontWeight: FontWeight.normal,
-    fontFamily: GoogleFonts.poppins().fontFamily,
+    fontFamily: "poppins",
     color: AppColors.whiteColor,
   );
 
   static TextStyle regular14 = TextStyle(
     fontSize: _getResponsiveFontSize(14),
     fontWeight: FontWeight.normal,
-    fontFamily: GoogleFonts.poppins().fontFamily,
+    fontFamily: "poppins",
     color: AppColors.whiteColor,
   );
 
   static TextStyle regular12 = TextStyle(
     fontSize: _getResponsiveFontSize(12),
     fontWeight: FontWeight.normal,
-    fontFamily: GoogleFonts.poppins().fontFamily,
+    fontFamily: "poppins",
     color: AppColors.secondaryColor,
   );
 
   static TextStyle light15 = TextStyle(
     fontSize: _getResponsiveFontSize(15),
     fontWeight: FontWeight.w300,
-    fontFamily: GoogleFonts.poppins().fontFamily,
+    fontFamily: "poppins",
     color: AppColors.primaryColor,
   );
 
   static TextStyle extraLight12 = TextStyle(
     fontSize: _getResponsiveFontSize(12),
     fontWeight: FontWeight.w200,
-    fontFamily: GoogleFonts.poppins().fontFamily,
+    fontFamily: "poppins",
     color: AppColors.whiteColor,
   );
 
   static TextStyle light12 = TextStyle(
     fontSize: _getResponsiveFontSize(12),
     fontWeight: FontWeight.w300,
-    fontFamily: GoogleFonts.poppins().fontFamily,
+    fontFamily: "poppins",
     color: AppColors.blackColor,
   );
 
   static TextStyle semiBold18 = TextStyle(
     fontSize: _getResponsiveFontSize(18),
     fontWeight: FontWeight.w600,
-    fontFamily: GoogleFonts.poppins().fontFamily,
+    fontFamily: "poppins",
     color: AppColors.blackColor,
   );
 
   static TextStyle semiBold14 = TextStyle(
     fontSize: _getResponsiveFontSize(14),
     fontWeight: FontWeight.w600,
-    fontFamily: GoogleFonts.poppins().fontFamily,
+    fontFamily: "poppins",
     color: AppColors.whiteColor,
   );
 
   static TextStyle semiBold16 = TextStyle(
     fontSize: _getResponsiveFontSize(16),
     fontWeight: FontWeight.w600,
-    fontFamily: GoogleFonts.poppins().fontFamily,
+    fontFamily: "poppins",
     color: AppColors.whiteColor,
   );
 
   static TextStyle medium16 = TextStyle(
     fontSize: _getResponsiveFontSize(16),
     fontWeight: FontWeight.w500,
-    fontFamily: GoogleFonts.poppins().fontFamily,
+    fontFamily: "poppins",
     color: const Color(0xff240F4F),
   );
 
   static TextStyle medium18 = TextStyle(
     fontSize: _getResponsiveFontSize(18),
     fontWeight: FontWeight.w500,
-    fontFamily: GoogleFonts.poppins().fontFamily,
+    fontFamily: "poppins",
     color: AppColors.primaryColor,
   );
 
   static TextStyle bold18 = TextStyle(
     fontSize: _getResponsiveFontSize(18),
     fontWeight: FontWeight.bold,
-    fontFamily: GoogleFonts.poppins().fontFamily,
+    fontFamily: "poppins",
     color: AppColors.primaryColor,
   );
 
   static TextStyle bold20 = TextStyle(
     fontSize: _getResponsiveFontSize(20),
     fontWeight: FontWeight.w700,
-    fontFamily: GoogleFonts.poppins().fontFamily,
+    fontFamily: "poppins",
     color: AppColors.whiteColor,
   );
 
   static TextStyle light20 = TextStyle(
     fontSize: _getResponsiveFontSize(20),
     fontWeight: FontWeight.w300,
-    fontFamily: GoogleFonts.poppins().fontFamily,
+    fontFamily: "poppins",
     color: Color(0xff1E1E1E).withValues(alpha: .5),
   );
 
   static TextStyle light16 = TextStyle(
     fontSize: _getResponsiveFontSize(16),
     fontWeight: FontWeight.w300,
-    fontFamily: GoogleFonts.poppins().fontFamily,
+    fontFamily: "poppins",
     color: Color(0xff1E1E1E).withValues(alpha: .5),
   );
 
@@ -129,7 +128,7 @@ class Styles {
   static TextStyle medium15 = TextStyle(
     fontSize: _getResponsiveFontSize(15),
     fontWeight: FontWeight.w500,
-    fontFamily: GoogleFonts.poppins().fontFamily,
+    fontFamily: "poppins",
     color: AppColors.whiteColor,
   );
 
@@ -151,14 +150,6 @@ class Styles {
     height: 1.5,
   );
 
-  // static TextStyle doaaContent20 = TextStyle(
-  //   color: AppColors.blackColor,
-  //   fontFamily: GoogleFonts.poppins().fontFamily,
-  //   fontSize: 22,
-  //   fontWeight: FontWeight.w600,
-  //   wordSpacing: 4,
-  //   height: 1.5,
-  // );
   static TextStyle doaaContent26 = TextStyle(
       color: AppColors.blackColor,
       fontWeight: FontWeight.w600,
@@ -169,7 +160,7 @@ class Styles {
   static TextStyle counterTextStyle16 = TextStyle(
     fontWeight: FontWeight.w600,
     wordSpacing: 4,
-    fontFamily: GoogleFonts.poppins().fontFamily,
+    fontFamily: "poppins",
     height: 1.8,
     fontSize: _getResponsiveFontSize(16),
     color: AppColors.primaryColor,
@@ -183,7 +174,7 @@ class Styles {
 
   static TextStyle suraHeader = TextStyle(
       fontSize: _getResponsiveFontSize(14.sp),
-      fontFamily: GoogleFonts.arima().fontFamily,
+      fontFamily: "arima",
       color: Colors.white);
 
   static TextStyle reqular5 = TextStyle(

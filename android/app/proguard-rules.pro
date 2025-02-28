@@ -1,0 +1,7 @@
+-keep class androidx.work.** { *; }
+-keep class androidx.work.impl.** { *; }
+-keep class com.dexterous.flutterlocalnotifications.** { *; }
+-keep class com.google.gson.** { *; }
+-keepattributes *Annotation*
+-dontwarn com.dexterous.flutterlocalnotifications.**
+-dontwarn com.google.gson.**
