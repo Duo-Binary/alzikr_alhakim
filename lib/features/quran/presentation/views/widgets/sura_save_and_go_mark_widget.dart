@@ -14,24 +14,20 @@ class SuraSaveAndGoMarkWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final sura = context.read<SuraCubit>();
     return Container(
-      height: 65,
-      margin: EdgeInsets.symmetric(horizontal: 16.w),
+      height: 60,
+      margin: EdgeInsets.symmetric(horizontal: 24.w),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8),
-          color: AppColors.blackColor.withValues(alpha: .9)),
+          color: AppColors.blackColor.withValues(alpha: .85)),
       child: Center(
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             SaveAndGoMarkItem(
                 text: "حفظ علامة",
                 onTap: () {
                   sura.suraScroll();
                   sura.saveMark(index);
-                  // showDialog(
-                  //     context: context,
-                  //     builder: (context) =>
-                  //         SuraAlertDialogWidget(index: index));
                 }),
             SaveAndGoMarkItem(
                 text: "انتقل الي العلامة",

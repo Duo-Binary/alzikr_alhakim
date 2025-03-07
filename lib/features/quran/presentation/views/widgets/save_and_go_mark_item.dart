@@ -16,7 +16,7 @@ class SaveAndGoMarkItem extends StatelessWidget {
         height: 33,
         width: 150,
         decoration: BoxDecoration(
-            color: Color(0xff575757).withValues(alpha: .8),
+            color: Color(0xff575757).withValues(alpha: .7),
             borderRadius: BorderRadius.circular(4)),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
