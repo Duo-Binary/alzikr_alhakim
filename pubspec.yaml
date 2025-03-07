@@ -43,7 +43,9 @@ dependencies:
   jhijri: ^1.0.0
   location: ^8.0.0
   quran:
-    path: ./quran-1.2.2
+  
+  quran_library:
+    path: ./quran_library  
   shared_preferences: ^2.4.0
   timezone: ^0.10.0
   wakelock_plus: ^1.2.10
@@ -68,7 +70,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/svg/
-    - assets/quran-images/
+    # - assets/quran-images/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
   # For details regarding adding assets from package dependencies, see

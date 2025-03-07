@@ -4,6 +4,8 @@ sealed class SuraState {}
 
 final class SuraInitial extends SuraState {}
 
+final class InitPageControllerState extends SuraState {}
+
 final class ChangeSuraClick extends SuraState {}
 
 final class SaveMarkState extends SuraState {}

@@ -1,9 +1,11 @@
+import 'dart:io';
+
 import 'package:alzikr_alhakim/core/utils/get_prayers_time.dart';
 import 'package:alzikr_alhakim/core/utils/service/location_service.dart';
 import 'package:alzikr_alhakim/core/utils/service/notification_service.dart';
-import 'package:alzikr_alhakim/core/utils/service/work_manager_service.dart';
 import 'package:geocoding/geocoding.dart';
 
+import '../../../../core/utils/service/work_manager_service.dart';
 import '../models/prayer_model.dart';
 import 'prayer_repo.dart';
 
@@ -69,8 +71,10 @@ class PrayerRepoImpl extends PrayerRepo {
     _longitude = location?.longitude;
 
     // work manager for notification
-    await WorkManagerService()
-        .intitWorkManager(latitude: _latitude!, longitude: _longitude!);
+    if (Platform.isAndroid) {
+      await WorkManagerService()
+          .intitWorkManager(latitude: _latitude!, longitude: _longitude!);
+    }
 
     if (_latitude != null && _longitude != null) {
       List<Placemark> placemarks = await placemarkFromCoordinates(

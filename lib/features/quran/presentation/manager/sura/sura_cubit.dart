@@ -1,4 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wakelock_plus/wakelock_plus.dart';
 
 import '../../../../../core/utils/service/shared_pref_service.dart';
 
@@ -9,9 +11,18 @@ class SuraCubit extends Cubit<SuraState> {
     _getMark();
   }
 
+  late PageController pageController;
+
   final SharedPrefService _prefService = SharedPrefService();
+
   bool isSuraClicked = false;
-  int? index;
+  int? index, page;
+
+  initPageController(int initialPage) {
+    pageController = PageController(initialPage: initialPage);
+    _initSuraView();
+    emit(InitPageControllerState());
+  }
 
   void suraClick() {
     isSuraClicked = !isSuraClicked;
@@ -32,5 +43,28 @@ class SuraCubit extends Cubit<SuraState> {
   void _getMark() {
     index = _prefService.getInt();
     emit(GetMarkState());
+  }
+
+  void getPage(int index) {
+    page = index;
+    emit(GetMarkState());
+  }
+
+  void _initSuraView() {
+    WakelockPlus.enable();
+
+    pageController.addListener(() {
+      if (isSuraClicked) {
+        if (pageController.position.pixels != 0) {
+          suraScroll();
+        }
+      }
+    });
+  }
+
+  @override
+  Future<void> close() {
+    WakelockPlus.disable();
+    return super.close();
   }
 }

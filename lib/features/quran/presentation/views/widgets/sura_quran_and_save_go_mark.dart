@@ -8,9 +8,8 @@ import 'sura_save_and_go_mark_widget.dart';
 
 class SuraQuranAndSaveGoMark extends StatelessWidget {
   const SuraQuranAndSaveGoMark(
-      {super.key, required this.index, required this.onTap});
+      {super.key, required this.index});
   final int index;
-  final Function() onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +25,7 @@ class SuraQuranAndSaveGoMark extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               children: [
                 SuraQuranFound(index: index),
-                if (sura.isSuraClicked)
-                  SuraSaveAndGoMarkWidget(index: index, onTap: onTap),
+                if (sura.isSuraClicked) SuraSaveAndGoMarkWidget(index: index),
                 if (sura.index == index) const SuraBookMarkWidget()
               ],
             ));
