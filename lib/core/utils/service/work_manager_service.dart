@@ -7,7 +7,7 @@ class WorkManagerService {
       {required double latitude, required double longitude}) async {
     await Workmanager().initialize(
       _callbackDispatcher,
-      isInDebugMode: false,
+      isInDebugMode: true,
     );
 
     await Workmanager().registerPeriodicTask(

@@ -39,7 +39,7 @@ class NotificationService {
           ?.requestNotificationsPermission();
     }
   }
-
+  
   Future<void> showScheduledNotification(
       {required String prayerName,
       required int hour,
@@ -91,7 +91,6 @@ class NotificationService {
     for (var prayer
         in getPrayersTime(latitude: latitude, longitude: longitude)) {
       if (prayer.values.first.isAfter(DateTime.now())) {
-        // await NotificationService().initNotifications();
         await NotificationService().showScheduledNotification(
             prayerName: prayer.keys.first,
             hour: prayer.values.first.hour,
