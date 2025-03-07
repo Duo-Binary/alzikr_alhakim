@@ -39,23 +39,24 @@ class NotificationService {
           ?.requestNotificationsPermission();
     }
   }
-  
+
   Future<void> showScheduledNotification(
       {required String prayerName,
+      required int day,
       required int hour,
       required int minute}) async {
     NotificationDetails notificationDetails = _setNotificationsDetails();
     await _setTimeZone();
 
     await _flutterLocalNotificationsPlugin.zonedSchedule(
-        hour + minute + 1,
+        day + hour + minute + 1,
         "حان الآن وقت صلاة $prayerName",
         "اذكر الله واستعد للصلاة 🙏",
         tz.TZDateTime(
           tz.local,
           DateTime.now().year,
           DateTime.now().month,
-          DateTime.now().day,
+          day,
           hour,
           minute,
           3,
@@ -88,11 +89,12 @@ class NotificationService {
   @pragma('vm:entry-point')
   Future<void> getNotifications(
       {required double latitude, required double longitude}) async {
-    for (var prayer
-        in getPrayersTime(latitude: latitude, longitude: longitude)) {
+    for (var prayer in getPrayersTimeNotification(
+        latitude: latitude, longitude: longitude)) {
       if (prayer.values.first.isAfter(DateTime.now())) {
         await NotificationService().showScheduledNotification(
             prayerName: prayer.keys.first,
+            day: prayer.values.first.day,
             hour: prayer.values.first.hour,
             minute: prayer.values.first.minute);
       }

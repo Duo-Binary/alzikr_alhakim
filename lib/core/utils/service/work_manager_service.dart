@@ -12,7 +12,7 @@ class WorkManagerService {
 
     await Workmanager().registerPeriodicTask(
         "prayerTimes", "prayerNotification",
-        frequency: const Duration(minutes: 15),
+        frequency: const Duration(days: 1),
         inputData: {"latitude": latitude, "longitude": longitude});
   }
 }

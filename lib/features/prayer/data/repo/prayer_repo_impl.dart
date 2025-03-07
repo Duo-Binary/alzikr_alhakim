@@ -97,7 +97,9 @@ class PrayerRepoImpl extends PrayerRepo {
     _longitude = longitude ?? 31.23537888915283;
 
     // work manager for notification
+
     if (Platform.isAndroid) {
+     
       await WorkManagerService()
           .intitWorkManager(latitude: _latitude!, longitude: _longitude!);
     }
