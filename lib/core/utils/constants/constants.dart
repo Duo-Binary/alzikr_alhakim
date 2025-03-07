@@ -18,4 +18,8 @@ abstract class Constants {
     Assets.imagesActiveMagrab,
     Assets.imagesActiveFajr
   ];
+
+  static const latitude = 'latitude';
+  static const longitude = 'longitude';
+  static const address = 'address';
 }

@@ -1,8 +1,10 @@
 import 'dart:io';
 
+import 'package:alzikr_alhakim/core/utils/constants/constants.dart';
 import 'package:alzikr_alhakim/core/utils/get_prayers_time.dart';
 import 'package:alzikr_alhakim/core/utils/service/location_service.dart';
 import 'package:alzikr_alhakim/core/utils/service/notification_service.dart';
+import 'package:alzikr_alhakim/core/utils/service/shared_pref_service.dart';
 import 'package:geocoding/geocoding.dart';
 
 import '../../../../core/utils/service/work_manager_service.dart';
@@ -12,19 +14,23 @@ import 'prayer_repo.dart';
 class PrayerRepoImpl extends PrayerRepo {
   final LocationService _locationService = LocationService();
   final NotificationService _notificationService = NotificationService();
+  final SharedPrefService _sharedPrefService = SharedPrefService();
   List<PrayerModel> _prayerList = [];
 
   double? _latitude, _longitude;
 
   @override
   Map getRemaningTime() {
-    if (_latitude == null && _longitude == null) {
-      _latitude = 30.045743221239082;
-      _longitude = 31.23537888915283;
-    }
+    double? latitude = _sharedPrefService.getDouble(key: Constants.latitude);
+    double? longitude = _sharedPrefService.getDouble(key: Constants.longitude);
+    // if (latitude == null && longitude == null) {
+    //   _latitude = 30.045743221239082;
+    //   _longitude = 31.23537888915283;
+    // }
 
-    List<Map<String, DateTime>> list =
-        getPrayersTime(latitude: _latitude!, longitude: _longitude!);
+    List<Map<String, DateTime>> list = getPrayersTime(
+        latitude: latitude ?? 30.045743221239082,
+        longitude: longitude ?? 31.23537888915283);
     DateTime now = DateTime.now();
 
     _prayerList = list.map((prayer) {
@@ -64,27 +70,37 @@ class PrayerRepoImpl extends PrayerRepo {
   }
 
   @override
-  Future<String?> getCurrentLocation() async {
-    final location = await _locationService.getCurrentLocation();
+  Future<void> getCurrentLocation() async {
+    double? latitude = _sharedPrefService.getDouble(key: Constants.latitude);
+    double? longitude = _sharedPrefService.getDouble(key: Constants.longitude);
 
-    _latitude = location?.latitude;
-    _longitude = location?.longitude;
+    if (latitude == null && longitude == null) {
+      final location = await _locationService.getCurrentLocation();
+      if (location != null) {
+        await _sharedPrefService.setDouble(
+            key: Constants.latitude, value: location.latitude);
+        await _sharedPrefService.setDouble(
+            key: Constants.longitude, value: location.longitude);
+
+        List<Placemark> placemarks = await placemarkFromCoordinates(
+          location.latitude,
+          location.longitude,
+        );
+
+        await _sharedPrefService.setString(
+            key: Constants.address,
+            value: "${placemarks.first.locality}, ${placemarks.first.country}");
+      }
+    }
+
+    _latitude = latitude ?? 30.045743221239082;
+    _longitude = longitude ?? 31.23537888915283;
 
     // work manager for notification
     if (Platform.isAndroid) {
       await WorkManagerService()
           .intitWorkManager(latitude: _latitude!, longitude: _longitude!);
     }
-
-    if (_latitude != null && _longitude != null) {
-      List<Placemark> placemarks = await placemarkFromCoordinates(
-        _latitude!,
-        _longitude!,
-      );
-      return "${placemarks.first.locality}, ${placemarks.first.country}";
-    }
-
-    return null;
   }
 
   @override

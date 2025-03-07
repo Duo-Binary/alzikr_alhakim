@@ -19,16 +19,18 @@ class LocationService {
     }
     if (permission == PermissionStatus.denied) {
       permission = await _location.requestPermission();
+
       return permission == PermissionStatus.granted;
     }
 
-    return true;
+    return permission == PermissionStatus.granted;
   }
 
   Future<geolocator.Position?> getCurrentLocation() async {
     if (await _checkServiceEnabled()) {
       if (await _checkLocationPermission()) {
         final location = await geolocator.Geolocator.getCurrentPosition();
+
         return location;
       }
     }

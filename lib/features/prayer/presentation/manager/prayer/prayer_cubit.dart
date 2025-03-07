@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:alzikr_alhakim/core/utils/constants/constants.dart';
+import 'package:alzikr_alhakim/core/utils/service/shared_pref_service.dart';
 import 'package:alzikr_alhakim/features/prayer/data/repo/prayer_repo.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -13,6 +15,7 @@ class PrayerCubit extends Cubit<PrayerState> {
   }
 
   final PrayerRepo _prayerRepo;
+  final SharedPrefService _sharedPrefService = SharedPrefService();
 
   Timer? _timer;
   PrayerModel? _lastPrayer;
@@ -41,13 +44,17 @@ class PrayerCubit extends Cubit<PrayerState> {
   }
 
   Future<void> getLocationName() async {
-    final location = await _prayerRepo.getCurrentLocation();
+    locationName = _sharedPrefService.getString(key: Constants.address) ??
+        "Cairo, Egypt (default)";
+
+    await _prayerRepo.getCurrentLocation();
+
+    locationName = _sharedPrefService.getString(key: Constants.address) ??
+        "Cairo, Egypt (default)";
+
     await _prayerRepo.initNotifications();
-    if (location != null) {
-      locationName = location;
-    }
+
     prayerList.clear();
-    // getRemaningTime();
     emit(GetLocationSuccess());
   }
 
