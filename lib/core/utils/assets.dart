@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
-  
+
   /// Assets for imagesActiveAser
   /// assets/images/active_aser.svg
   static const String imagesActiveAser = "assets/images/active_aser.svg";
@@ -48,7 +48,8 @@ class Assets {
 
   /// Assets for imagesPrayerBackground
   /// assets/images/prayer_background.png
-  static const String imagesPrayerBackground = "assets/images/prayer_background.png";
+  static const String imagesPrayerBackground =
+      "assets/images/prayer_background.png";
 
   /// Assets for imagesPrayerIcon
   /// assets/images/prayer_icon.svg
@@ -84,7 +85,8 @@ class Assets {
 
   /// Assets for imagesUnactiveDzuhur
   /// assets/images/unactive_dzuhur.svg
-  static const String imagesUnactiveDzuhur = "assets/images/unactive_dzuhur.svg";
+  static const String imagesUnactiveDzuhur =
+      "assets/images/unactive_dzuhur.svg";
 
   /// Assets for imagesUnactiveFajr
   /// assets/images/unactive_fajr.svg
@@ -92,7 +94,8 @@ class Assets {
 
   /// Assets for imagesUnactiveMagrab
   /// assets/images/unactive_magrab.svg
-  static const String imagesUnactiveMagrab = "assets/images/unactive_magrab.svg";
+  static const String imagesUnactiveMagrab =
+      "assets/images/unactive_magrab.svg";
 
   /// Assets for imagesUnactiveShrok
   /// assets/images/unactive_shrok.svg
@@ -102,4 +105,3 @@ class Assets {
   /// assets/images/voice.svg
   static const String imagesVoice = "assets/images/voice.svg";
 }
-

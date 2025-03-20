@@ -11,7 +11,7 @@ class DoaSliverList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
- final doa = context.read<DoaBloc>();
+    final doa = context.read<DoaBloc>();
     return BlocBuilder<DoaBloc, DoaState>(
       builder: (context, state) {
         return SliverList.builder(

@@ -19,4 +19,3 @@ class QuranViewBody extends StatelessWidget {
     );
   }
 }
-

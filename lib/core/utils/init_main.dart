@@ -11,12 +11,10 @@ import 'set_system_setting.dart';
 
 Future<void> initMain() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   Bloc.observer = BlocObs();
   setSystemSetting();
-  // await QuranLibrary().init();
-  // await CacheImages.loadSvgImages();
-  // await initializeDateFormatting('ar_EG', null);
-  // await SharedPrefService.init();
+
   await Future.wait([
     QuranLibrary().init(),
     CacheImages.loadSvgImages(),

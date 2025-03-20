@@ -6,13 +6,13 @@ class DoaModel {
   List<Array>? verses;
 
   DoaModel({
-   this.id,
-   this.category,
-   this.audio,
-   this.filename,
-   this.verses,
+    this.id,
+    this.category,
+    this.audio,
+    this.filename,
+    this.verses,
   });
-   factory DoaModel.fromJson(Map<String, dynamic> json) {
+  factory DoaModel.fromJson(Map<String, dynamic> json) {
     return DoaModel(
       id: json["id"],
       category: json["category"],
@@ -30,13 +30,18 @@ class Array {
   String? audio;
   String? filename;
 
-  Array({this.id, this.text,this.count,this.audio,this.filename,});
+  Array({
+    this.id,
+    this.text,
+    this.count,
+    this.audio,
+    this.filename,
+  });
 
   factory Array.fromJson(Map<String, dynamic> json) {
     return Array(
       id: json["id"],
       text: json["text"],
-
       count: json["count"],
       audio: json["audio"],
       filename: json["filename"],

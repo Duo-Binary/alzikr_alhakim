@@ -27,8 +27,7 @@ class CustomTextField extends StatelessWidget {
             enabledBorder: customBorder(),
             focusedBorder: customBorder(),
             hintText: textFieldModeld.hintText,
-            hintStyle:
-                Styles.extraLight12,
+            hintStyle: Styles.extraLight12,
             contentPadding:
                 const EdgeInsets.symmetric(vertical: 4, horizontal: 32),
             prefixIcon: Transform.rotate(

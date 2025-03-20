@@ -16,7 +16,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.0+1
+version: 1.0.2+2
 
 environment:
   sdk: ^3.5.4
@@ -30,6 +30,7 @@ environment:
 dependencies:
   adhan: ^2.0.0+1
   cupertino_icons: ^1.0.8
+  dio: ^5.8.0+1
   flutter:
     sdk: flutter
   flutter_bloc: ^9.0.0
@@ -39,13 +40,14 @@ dependencies:
   flutter_timezone: ^4.1.0
   geocoding: ^3.0.0
   geolocator: ^13.0.2
+  internet_connection_checker: ^3.0.1
   intl: ^0.20.2
   jhijri: ^1.0.0
   location: ^8.0.0
-  quran:
-  
+  package_info_plus: ^8.3.0
+  quran: null
   quran_library:
-    path: ./quran_library  
+    path: ./quran_library
   shared_preferences: ^2.4.0
   timezone: ^0.10.0
   wakelock_plus: ^1.2.10

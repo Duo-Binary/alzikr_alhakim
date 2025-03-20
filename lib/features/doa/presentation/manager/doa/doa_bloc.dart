@@ -54,14 +54,13 @@ class DoaBloc extends Bloc<DoaaEvent, DoaState> {
   }
 
   void swapToNextVerseBackward({required int length}) {
-    if(currentVerseIndex != 0){
-        if (currentVerseIndex >= 0) {
-      currentVerseIndex--;
-      currentCountIndex = 0;
-      emit(ChangeCounterIndexSuccess());
+    if (currentVerseIndex != 0) {
+      if (currentVerseIndex >= 0) {
+        currentVerseIndex--;
+        currentCountIndex = 0;
+        emit(ChangeCounterIndexSuccess());
+      }
     }
-    }
-  
   }
 
   void counterClick(DoaModel doa, BuildContext context) {

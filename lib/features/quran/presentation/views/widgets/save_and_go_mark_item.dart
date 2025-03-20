@@ -1,5 +1,4 @@
-import 'package:alzikr_alhakim/core/utils/assets.dart';
-import 'package:alzikr_alhakim/core/utils/custom_svg.dart';
+import 'package:alzikr_alhakim/core/utils/colors.dart';
 import 'package:alzikr_alhakim/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 
@@ -16,18 +15,13 @@ class SaveAndGoMarkItem extends StatelessWidget {
         height: 33,
         width: 150,
         decoration: BoxDecoration(
-            color: Color(0xff575757).withValues(alpha: .7),
+            color: AppColors.blackColor.withValues(alpha: .5),
             borderRadius: BorderRadius.circular(4)),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CustomSvg(image: Assets.imagesSaveFilled),
-            const SizedBox(width: 10),
-            Text(
-              text,
-              style: Styles.tahaBold18,
-            ),
-          ],
+        child: Center(
+          child: Text(
+            text,
+            style: Styles.tahaBold18,
+          ),
         ),
       ),
     );

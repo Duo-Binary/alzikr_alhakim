@@ -7,4 +7,3 @@ final class PrayerInitial extends PrayerState {}
 final class PrayerSuccess extends PrayerState {}
 
 final class GetLocationSuccess extends PrayerState {}
-

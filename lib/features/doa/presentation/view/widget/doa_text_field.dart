@@ -17,6 +17,5 @@ class DoaTextField extends StatelessWidget {
             onChanged: (value) {
               doa.add(WriteDoaEvent(doaName: value));
             }));
-  
   }
 }

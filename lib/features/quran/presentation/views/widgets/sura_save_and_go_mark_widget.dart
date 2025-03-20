@@ -1,4 +1,3 @@
-import 'package:alzikr_alhakim/core/utils/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,14 +13,12 @@ class SuraSaveAndGoMarkWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final sura = context.read<SuraCubit>();
     return Container(
-      height: 60,
+      height: 50,
       margin: EdgeInsets.symmetric(horizontal: 24.w),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
-          color: AppColors.blackColor.withValues(alpha: .85)),
       child: Center(
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          textDirection: TextDirection.rtl,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SaveAndGoMarkItem(
                 text: "حفظ علامة",
@@ -29,10 +26,11 @@ class SuraSaveAndGoMarkWidget extends StatelessWidget {
                   sura.suraScroll();
                   sura.saveMark(index);
                 }),
+            const SizedBox(width: 10),
             SaveAndGoMarkItem(
                 text: "انتقل الي العلامة",
                 onTap: () {
-                  if (sura.index != null) {
+                  if (sura.index != null && sura.index! > 0) {
                     sura.pageController.jumpToPage(sura.index! - 1);
                     sura.suraScroll();
                   }

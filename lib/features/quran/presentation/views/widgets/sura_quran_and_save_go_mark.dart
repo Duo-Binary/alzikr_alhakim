@@ -7,8 +7,7 @@ import 'sura_quran_found.dart';
 import 'sura_save_and_go_mark_widget.dart';
 
 class SuraQuranAndSaveGoMark extends StatelessWidget {
-  const SuraQuranAndSaveGoMark(
-      {super.key, required this.index});
+  const SuraQuranAndSaveGoMark({super.key, required this.index});
   final int index;
 
   @override
