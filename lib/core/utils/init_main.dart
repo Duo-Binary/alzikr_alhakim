@@ -21,5 +21,6 @@ Future<void> initMain() async {
     initializeDateFormatting('ar_EG', null),
     SharedPrefService.init()
   ]);
+
   runApp(const AlzikrAlhakim());
 }

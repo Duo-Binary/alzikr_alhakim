@@ -1,42 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../doa/presentation/view/doa_view.dart';
-import '../../../prayer/presentation/views/prayer_view.dart';
-import '../../../quran/presentation/views/quran_view.dart';
 import '../manager/home/home_cubit.dart';
 import 'widgets/bottom_nav_bar_widget.dart';
+import 'widgets/home_alert_dialog.dart';
 
-class HomeView extends StatefulWidget {
+class HomeView extends StatelessWidget {
   const HomeView({super.key});
 
   @override
-  State<HomeView> createState() => _HomeViewState();
-}
-
-class _HomeViewState extends State<HomeView> {
-  int activeIndex = 0;
-  List views = const [
-    PrayerView(),
-    QuranView(),
-    DoaaView(),
-  ];
-
-  @override
   Widget build(BuildContext context) {
-    return BlocBuilder<HomeCubit, HomeState>(
+    final home = context.read<HomeCubit>();
+
+    return BlocConsumer<HomeCubit, HomeState>(
+      listener: (context, state) {
+        if (home.isVersionAvailable == false) return;
+        showDialog(
+            context: context,
+            barrierDismissible: false,
+            builder: (context) => const HomeAlertDialog());
+      },
       builder: (context, state) {
         return Scaffold(
-          body: views[activeIndex],
+          body: home.views[home.activeIndex],
           bottomNavigationBar: Directionality(
             textDirection: TextDirection.rtl,
             child: BottomNavBarWidget(
-              activeIndex: activeIndex,
+              activeIndex: home.activeIndex,
               onTap: (index) {
-                if (activeIndex != index) {
-                  activeIndex = index;
+                if (home.activeIndex != index) {
+                  home.changeIndex(index);
                 }
-                setState(() {});
               },
             ),
           ),

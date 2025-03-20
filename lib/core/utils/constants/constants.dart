@@ -24,4 +24,6 @@ abstract class Constants {
   static const address = 'address';
 
   static const url = "https://api.jsonbin.io/v3/b/67dc0e888960c979a57542c6";
+
+  static const firstTime = "firstTime";
 }

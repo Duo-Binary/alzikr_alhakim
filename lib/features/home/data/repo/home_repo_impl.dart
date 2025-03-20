@@ -7,22 +7,27 @@ import '../../../../core/models/app_version_info_model/app_version_info_model.da
 
 class HomeRepoImpl extends HomeRepo {
   final ApiService _apiService = ApiService();
+
   @override
-  Future<bool> checkNewAppVersion() async {
+  Future<Map> checkNewAppVersion() async {
     final connectionChecker = InternetConnectionChecker.instance;
 
     PackageInfo packageInfo = await PackageInfo.fromPlatform();
     String version = packageInfo.version;
 
     bool isVersionAvailable = false;
+    String downloadUrl = "";
     bool isConnected = await connectionChecker.hasConnection;
 
     if (isConnected) {
       AppVersionInfoModel appVersionInfoModel = await _apiService.get();
-
       isVersionAvailable = version != appVersionInfoModel.record.latestVersion;
+      downloadUrl = appVersionInfoModel.record.downloadUrl;
     }
 
-    return isVersionAvailable;
+    return {
+      "isVersionAvailable": isVersionAvailable,
+      "downloadUrl": downloadUrl
+    };
   }
 }

@@ -50,6 +50,7 @@ dependencies:
     path: ./quran_library
   shared_preferences: ^2.4.0
   timezone: ^0.10.0
+  url_launcher: ^6.3.1
   wakelock_plus: ^1.2.10
   workmanager: ^0.5.2
 

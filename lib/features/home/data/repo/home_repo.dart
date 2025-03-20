@@ -1,3 +1,3 @@
 abstract class HomeRepo {
-  Future<bool> checkNewAppVersion();
+  Future<Map> checkNewAppVersion();
 }
