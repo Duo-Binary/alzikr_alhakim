@@ -30,7 +30,6 @@ environment:
 dependencies:
   adhan: ^2.0.0+1
   cupertino_icons: ^1.0.8
-  dio: ^5.8.0+1
   flutter:
     sdk: flutter
   flutter_bloc: ^9.0.0
@@ -44,7 +43,6 @@ dependencies:
   intl: ^0.20.2
   jhijri: ^1.0.0
   location: ^8.0.0
-  package_info_plus: ^8.3.0
   quran: null
   quran_library:
     path: ./quran_library

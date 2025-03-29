@@ -17,7 +17,7 @@ class PrayerRepoImpl extends PrayerRepo {
   final SharedPrefService _sharedPrefService = SharedPrefService();
   List<PrayerModel> _prayerList = [];
 
-  double? _latitude, _longitude;
+  // double? _latitude, _longitude;
 
   @override
   Map getRemaningTime() {
@@ -89,18 +89,22 @@ class PrayerRepoImpl extends PrayerRepo {
 
         await _sharedPrefService.setString(
             key: Constants.address,
-            value: "${placemarks.first.locality}, ${placemarks.first.country}");
+            value:
+                "${placemarks.first.subAdministrativeArea}, ${placemarks.first.country}");
       }
     }
 
-    _latitude = latitude ?? 30.045743221239082;
-    _longitude = longitude ?? 31.23537888915283;
+    // _latitude = latitude ?? 30.045743221239082;
+    // _longitude = longitude ?? 31.23537888915283;
+
+    latitude = _sharedPrefService.getDouble(key: Constants.latitude);
+    longitude = _sharedPrefService.getDouble(key: Constants.longitude);
 
     // work manager for notification
-
     if (Platform.isAndroid) {
-      await WorkManagerService()
-          .intitWorkManager(latitude: _latitude!, longitude: _longitude!);
+      await WorkManagerService().intitWorkManager(
+          latitude: latitude ?? 30.045743221239082,
+          longitude: longitude ?? 31.23537888915283);
     }
   }
 

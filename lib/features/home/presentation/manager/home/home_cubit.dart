@@ -4,25 +4,11 @@ import 'package:url_launcher/url_launcher.dart';
 import '../../../../doa/presentation/view/doa_view.dart';
 import '../../../../prayer/presentation/views/prayer_view.dart';
 import '../../../../quran/presentation/views/quran_view.dart';
-import '../../../data/repo/home_repo.dart';
 
 part 'home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
-  HomeCubit(this._homeRepo) : super(HomeInitial());
-  final HomeRepo _homeRepo;
-
-  bool? isVersionAvailable;
-  String? downloadUrl;
-  Future<void> checkNewAppVersion() async {
-    if (isVersionAvailable == null) {
-      final version = await _homeRepo.checkNewAppVersion();
-      isVersionAvailable = version["isVersionAvailable"];
-      downloadUrl = version["downloadUrl"];
-
-      emit(CheckNewAppVersion());
-    }
-  }
+  HomeCubit() : super(HomeInitial());
 
   int activeIndex = 0;
   List views = const [

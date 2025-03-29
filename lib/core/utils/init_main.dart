@@ -17,10 +17,13 @@ Future<void> initMain() async {
 
   await Future.wait([
     QuranLibrary().init(),
-    CacheImages.loadSvgImages(),
     initializeDateFormatting('ar_EG', null),
     SharedPrefService.init()
   ]);
+  final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+  WidgetsBinding.instance.addPostFrameCallback((_) async {
+    await CacheImages.loadImages(navigatorKey.currentContext!);
+  });
 
-  runApp(const AlzikrAlhakim());
+  runApp(AlzikrAlhakim(navigatorKey: navigatorKey));
 }

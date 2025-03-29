@@ -4,8 +4,8 @@ import 'package:alzikr_alhakim/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class CacheImages {
-  CacheImages._();
+abstract class CacheImages {
+  // CacheImages._();
   static final List<String> _pngImages = [
     Assets.imagesDoaaHeader,
     Assets.imagesNoQuran,
@@ -37,7 +37,11 @@ class CacheImages {
   ];
 
   static Future<void> loadImages(BuildContext context) async {
-    await _loadPngImages(context);
+    await Future.wait([
+      _loadSvgImages(),
+      _loadPngImages(context),
+    ]);
+
     log("loaded images successfully....");
   }
 
@@ -47,7 +51,7 @@ class CacheImages {
     }
   }
 
-  static Future<void> loadSvgImages() async {
+  static Future<void> _loadSvgImages() async {
     for (var image in _svgImages) {
       var loader = SvgAssetLoader(image);
       await svg.cache
